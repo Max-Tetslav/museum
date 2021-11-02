@@ -1,0 +1,504 @@
+@media (max-width: 1024px) {
+    header {
+        width: 1024px;
+    }
+    section {
+        width: 1024px;
+    }
+    footer {
+        width: 1024px;
+    }
+    .container {
+        max-width: 984px;
+    }
+    .title-dark {
+        font-size: 50px;
+        line-height: 75px;
+    }
+    .title-light {
+        font-size: 50px;
+        line-height: 75px;
+    }
+    .header {
+        height: 130px;
+        .header_nav {
+            display: none;
+        }
+        .menu_btn {
+            visibility: visible;
+        }
+    }
+    .menu-1024-container {
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        transition: all 0.3s ease-in;
+        .menu-1024 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 122px;
+            height: 263px;
+            margin-top: 35px;
+            margin-left: 35px;
+            padding: 0px;
+            .menu_item-1024 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 20px;
+                    line-height: 23px;
+                    letter-spacing: 2px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: $white;
+                }
+                .menu_item_icon-1024 {
+                    width: 12px;
+                    height: 12px;
+                    background-image: url(./assets/svg/menu_arrow.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+    .welcome {
+        height: 585px;
+        .welcome_info {
+            width: 445px;
+            height: 343px;
+            margin-top: 50px;
+        }
+        .welcome_title {
+            font-size: 50px;
+            line-height: 90px;
+        }
+        .welcome_text {
+            font-size: 24px;
+        }
+        .welcome_button {
+            width: 300px;
+            height: 60px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        .welcome-bg-img {
+            width: 700px;
+            height: 465px;
+            background-size: cover;
+        }
+        .slider {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            width: 700px;
+            height: 120px;
+            background-color: $black;
+            color: $white;
+            .slider__count {
+                width: 76px;
+                height: 40px;
+                margin-left: 224px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .slider__count__item {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 22px;
+                line-height: 40px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            .points {
+                width: 160px;
+                height: 12px;
+                margin-left: 40px;
+                .point {
+                    width: 12px;
+                    height: 100%;
+                }
+            }
+            .slider__arrows {
+                margin-left: 45px;
+            }
+        }
+    }
+    .visiting {
+        min-height: 1433px;
+    }
+    .visiting_underline-title {
+        bottom: -18px
+    }
+    .tour-title {
+        margin-top: 55px;
+    }
+    .underline-title::after {
+        bottom: -13px;
+    }
+    .cards-box {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 60px 50px;
+        margin-top: 90px;
+        margin-left: 108px;
+        margin-right: 108px;
+        margin-bottom: 60px;
+        &:nth-child(1) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        &:nth-child(2) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        &:nth-child(4) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        .card {
+            width: 330px;
+            height: 345px;
+            .card_title {
+                font-size: 28px;
+                line-height: 31px;
+                letter-spacing: 3px;
+                margin-bottom: 16px;
+            }
+            .card_title-underline {
+                width: 150px;
+            }
+            .card_text {
+                font-size: 19px;
+                line-height: 23px;
+                margin-bottom: 10px;
+                margin-top: 22px;
+            }
+            .card_text-smaller {
+                font-size: 15px;
+                line-height: 19px;
+                margin-top: 8px;
+            }
+        }
+    }
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EXPLORE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+    // EXPLORE //
+    // EXPLORE //
+    .explore {
+        min-height: 1149px;
+    }
+    .explore_underline {
+        bottom: -13px
+    }
+    .explore_container {
+        flex-direction: column;
+    }
+    .explore_text-box {
+        display: flex;
+        flex-direction: column;
+    }
+    .explore_title {
+        margin-top: 55px;
+    }
+    .explore_info {
+        margin-top: 75px;
+    }
+    .explore_info_text {
+        font-size: 19.6px;
+        line-height: 38.5px;
+        margin-bottom: 0px;
+        margin-top: 13px;
+        &:nth-of-type(2) {
+            margin-top: 0px;
+            line-height: 35px;
+        }
+        &:last-of-type {
+            display: none;
+        }
+    }
+    .explore-image {
+        margin-top: 3px;
+        margin-left: 132px;
+        margin-bottom: 60px;
+    }
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!video !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+    // video //
+    // video //
+    .video {
+        height: 1001px;
+        .video_text-box {
+            margin-top: 55px;
+            .video_info {
+                display: none;
+            }
+        }
+        .player {
+            margin-top: 42px;
+            width: 984px;
+            height: 504px;
+            .big-play__background {
+                width: 152px;
+                height: 152px;
+                bottom: 60px;
+            }
+            .player__controls {
+                width: 904px;
+                height: 60px;
+                padding-left: 40px;
+                padding-right: 40px;
+                justify-content: space-between;
+                .toggle {
+                    height: 30px;
+                }
+                .progress {
+                    width: 564px;
+                    height: 5px;
+                }
+                .volume-img {
+                    width: 26px;
+                    height: 20px;
+                }
+                .volume {
+                    width: 143px;
+                    height: 5px;
+                }
+                .fullscreen {
+                    width: 26px;
+                    height: 26px;
+                }
+                .range::-webkit-slider-thumb {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+        .video-playlist {
+            height: 170px;
+            margin-top: 40px;
+        }
+        .video-playlist_item {
+            width: 300px;
+            height: 170px;
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .gallery {
+        height: 1460px;
+        .gallery_container {
+            .gallery_title {
+                margin-top: 62px;
+            }
+            .picture-container {
+                height: 1265px;
+                margin-top: 0px;
+                .picture-inner-container {
+                    height: 2070px;
+                    .gallery-img {
+                        width: 304px;
+                    }
+                }
+                .picture-container-dark-shadow {
+                    height: 239px;
+                }
+            }
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .tickets {
+        min-height: 718px;
+    }
+    .tickets_title {
+        margin-top: 55px;
+        margin-bottom: 86px;
+    }
+    .tickets_underline-title {
+        bottom: 75px;
+    }
+    .tickets_order-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .tickets_image {
+        min-width: 700px;
+        max-height: 440px;
+        margin-top: 0px;
+    }
+    .tickets_select-form {
+        display: flex;
+        min-width: 0px;
+        justify-content: space-between;
+    }
+    .tickets-type_box {
+        display: none;
+    }
+    .amount-box {
+        height: 440px;
+        margin-top: 0px;
+        margin-right: 29px;
+        .amoutn-box__choose-container {
+            height: 321px;
+            width: 100%;
+        }
+    }
+    .amount-box_title {
+        margin-top: 0px;
+        margin-bottom: 28px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 32px;
+        color: $black;
+        text-align: left;
+    }
+    .age-group {
+        margin: 0;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .age-group:nth-of-type(2) {
+        margin-top: 30px;
+    }
+    .number_custom {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .number_actual {
+        width: 75px;
+    }
+    .amount-box_total-box {
+        margin-top: 25px;
+    }
+    .amount-box_total {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        letter-spacing: 1.65px;
+        color: $black;
+    }
+    .amount-box_sum {
+        margin-left: 16px
+    }
+    .submit-btn {
+        height: 50px;
+        width: 175px;
+        border: 0;
+        background-color: $black;
+        color: $white;
+        border-radius: 2px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 2px;
+        transition: all 0.2s ease;
+        &:hover {
+            color: $black;
+            background-color: $gold;
+            transition: all 0.2s ease;
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .contacts {
+        min-height: 734px;
+    }
+    .contacts_title {
+        margin-top: 55px;
+        margin-bottom: 13px;
+    }
+    .contacts_content-box {
+        margin-top: 75px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contacts_info-box_title {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .contacts_info-box_text {
+        font-size: 20px;
+        line-height: 23px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+        &:nth-of-type(1) {
+            margin-top: 35px;
+        }
+    }
+    .map {
+        max-width: 694px;
+    }
+    .overlay {
+        width: 1024px;
+        height: 100%;
+    }
+    .booking {
+        width: 1024px;
+        height: 768px;
+        .booking_form {
+            margin-top: 45px;
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .footer {
+        height: 243px;
+        .logo {
+            margin-top: 50px;
+        }
+    }
+    .sub_nav {
+        height: 128px;
+        width: 393px;
+        margin-top: 67px;
+    }
+    .sub_nav_menu {
+        margin-left: 15px;
+        padding: 0;
+        height: 150px;
+        width: 100%;
+        column-count: 2;
+        column-gap: 25px;
+    }
+    .icon-list_menu {
+        margin-bottom: 50px;
+    }
+    .copy {
+        width: 1024px;
+        height: 122px;
+    }
+}

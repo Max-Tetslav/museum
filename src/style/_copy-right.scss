@@ -1,0 +1,33 @@
+.copy {
+    height: 124px;
+    display: flex;
+    align-items: center;
+    background-color: $black;
+    border-top: solid 3px #666666;
+    .copy_item {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 22px;
+        line-height: 22px;
+        letter-spacing: 2px;
+        color: $white;
+    }
+    .copy_link {
+        text-decoration: none;
+        color: $white;
+        transition: all 0.3s ease-out;
+        &:hover {
+            color: $gold;
+            transition: all 0.3s ease-in;
+        }
+    }
+}
+
+.copy_container {
+    margin: 0 auto;
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
