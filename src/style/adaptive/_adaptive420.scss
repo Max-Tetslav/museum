@@ -1,0 +1,578 @@
+    @media screen and (max-width: 420px) {
+        header {
+            width: 420px;
+        }
+        section {
+            width: 420px;
+        }
+        footer {
+            width: 420px;
+        }
+        .container {
+            max-width: 380px;
+        }
+        .title-dark {
+            font-size: 28px;
+            line-height: 40px;
+        }
+        .title-light {
+            font-size: 28px;
+            line-height: 40px;
+        }
+        .header {
+            height: 90px;
+            .logo {
+                margin-top: 75px;
+                width: 138px;
+                height: 20px;
+            }
+            .logo_img {
+                width: 29px;
+                height: 16px;
+                background-position: center;
+                background-size: contain;
+                margin-bottom: 3px;
+            }
+            .logo_text {
+                font-size: 16px;
+                line-height: 18px;
+                margin-top: 14px;
+            }
+            .menu_btn {
+                top: 36px;
+            }
+        }
+        .menu-1024-container {
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            transition: all 0.3s ease-in;
+            .menu-1024 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 122px;
+                height: 263px;
+                margin-top: 35px;
+                margin-left: 35px;
+                padding: 0px;
+                .menu_item-1024 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    a {
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: 300;
+                        font-size: 20px;
+                        line-height: 23px;
+                        letter-spacing: 2px;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: $white;
+                    }
+                    .menu_item_icon-1024 {
+                        width: 12px;
+                        height: 12px;
+                        background-image: url(./assets/svg/menu_arrow.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+        .pictures-media-container {
+            position: absolute;
+            height: 187px;
+            bottom: 25px;
+            .pictures {
+                width: 310px;
+                height: 95px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                gap: 13px 13px;
+                img {
+                    height: 95px;
+                    width: 95px;
+                    object-fit: cover;
+                    &:nth-of-type(2) {
+                        order: -1;
+                    }
+                }
+            }
+            .menu768-underline {
+                bottom: 70px;
+            }
+            .icon-list {
+                height: 48px;
+                .icon-list_menu {
+                    bottom: 1px;
+                    right: 0px;
+                }
+            }
+        }
+        .welcome {
+            height: 544px;
+            .welcome_info {
+                width: 100%;
+                margin-top: 6px;
+            }
+            .welcome_title {
+                font-size: 28px;
+                line-height: 40px;
+            }
+            .welcome_text {
+                font-size: 16px;
+                line-height: 19px;
+                margin-top: 25px;
+            }
+            .welcome-bg-img {
+                height: 285px;
+                bottom: 80px;
+            }
+            .slider {
+                right: 75px;
+                height: 80px;
+                width: 230px;
+                .slider__count {
+                    margin-left: 0px;
+                    width: 50px;
+                }
+                .slider__count__item {
+                    font-size: 16px;
+                }
+                .points {
+                    width: 75px;
+                    height: 7px;
+                    margin-left: 25px;
+                    .point {
+                        width: 7px;
+                        height: 7px;
+                    }
+                }
+                .slider__arrows {
+                    margin-left: 25px;
+                    width: 55px;
+                }
+                .arrow {
+                    width: 20px;
+                }
+                .arrow-right {
+                    background-repeat: no-repeat;
+                    overflow-x: hidden;
+                    background-position: right;
+                }
+            }
+        }
+        .cards-box {
+            margin-left: 50px;
+            margin-bottom: 40px;
+            .card {
+                height: 295px;
+                .card_title {
+                    margin-top: 20px;
+                }
+                .card_image {
+                    height: 180px;
+                    width: 280px;
+                }
+                .card_text {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+        }
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EXPLORE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+        // EXPLORE //
+        // EXPLORE //
+        .explore {
+            min-height: 551px;
+        }
+        .explore_title {
+            margin-top: 40px;
+        }
+        .explore-image {
+            height: 368px;
+            margin-bottom: 40px;
+        }
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!video !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+        // video //
+        // video //
+        .video {
+            height: 551px;
+            .video_text-box {
+                margin-top: 40px;
+            }
+            .player {
+                margin-top: 16px;
+                width: 380px;
+                height: 226px;
+                .big-play__background {
+                    width: 50px;
+                    height: 50px;
+                    bottom: 55px;
+                }
+                .player__controls {
+                    width: 340px;
+                    height: 50px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    .toggle__img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                    .toggle {
+                        height: 18px;
+                        width: 14px;
+                    }
+                    .progress {
+                        position: absolute;
+                        width: 380px;
+                        left: 0px;
+                        bottom: 50px;
+                        margin: 0px;
+                    }
+                    .range::-webkit-slider-thumb {
+                        width: 10px;
+                        height: 10px;
+                    }
+                    .volume-img {
+                        width: 18px;
+                        height: 14px;
+                    }
+                    .volume {
+                        width: 200px;
+                    }
+                    .fullscreen {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+            .video-playlist {
+                height: 199px;
+                margin-top: 40px;
+            }
+            .video-playlist_item {
+                width: 180px;
+                height: 101px;
+            }
+            .video-slider {
+                width: 174px;
+                height: 8px;
+                margin: 20px auto 40px;
+                .video-slider__point {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .gallery {
+            height: 757px;
+            .gallery_container {
+                height: 100%;
+                .picture-container {
+                    height: 637px;
+                    margin-top: 0px;
+                    overflow-y: hidden;
+                    .picture-inner-container {
+                        height: 2050px;
+                        column-count: 2;
+                        column-gap: 24px;
+                        .gallery-img {
+                            width: 178px;
+                        }
+                        &:nth-child(1) {
+                            margin-top: 40px;
+                        }
+                        &:nth-child(11) {
+                            margin-top: 0px;
+                        }
+                    }
+                    .picture-container-dark-shadow {
+                        height: 112px;
+                    }
+                }
+            }
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .tickets {
+            min-height: 759px;
+        }
+        .tickets_order-box {
+            margin-top: 28px;
+            flex-direction: column;
+        }
+        .tickets_image {
+            min-width: 380px;
+            max-height: 160px;
+            object-fit: cover;
+        }
+        .tickets_select-form {
+            display: flex;
+            min-width: 0px;
+            justify-content: space-between;
+        }
+        .amount-box {
+            height: 376px;
+            margin: 0 auto;
+            margin-top: 40px;
+            .amoutn-box__choose-container {
+                height: 340px;
+            }
+        }
+        .amount-box_title {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .age-group {
+            font-size: 16px;
+            line-height: 19px;
+            &:nth-of-type(2) {
+                margin-top: 20px;
+            }
+        }
+        .number_custom {
+            width: 100%;
+            margin-top: 15px;
+        }
+        .number_actual {
+            width: 75px;
+        }
+        .amount-box_total-box {
+            margin-top: 40px;
+            justify-content: center;
+            .amount-box_total {
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0px;
+            }
+            .amount-box_sum {
+                margin-left: 5px;
+            }
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .paralax {
+            height: 300px;
+        }
+        .paralax__background {
+            min-height: 300px;
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .contacts {
+            min-height: 636px;
+        }
+        .contacts_info-box_title {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .contacts_info-box_text {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .overlay {
+            width: 420px;
+            overflow-y: scroll;
+        }
+        .booking {
+            width: 420px;
+            height: 1754px;
+            .booking_form {
+                height: 1624px;
+                margin-top: 40px;
+                flex-direction: column;
+                align-items: center;
+                .booking_type {
+                    width: 360px;
+                    height: 690px;
+                    margin-top: -5px;
+                    .booking_type_header {
+                        height: 121px;
+                        .booking_type_title {
+                            font-size: 32px;
+                            line-height: 35px;
+                        }
+                        .booking_type_description {
+                            margin-top: 15px;
+                        }
+                    }
+                    .booking_type_inputs {
+                        height: 526px;
+                        .date_container {
+                            width: 100%;
+                            height: 111px;
+                            flex-direction: column;
+                            .booking_type_inputs-item {
+                                width: 356px;
+                                padding: 0px;
+                            }
+                        }
+                        .booking_type_inputs-item {
+                            padding: 0px;
+                        }
+                    }
+                    .booking_type_tickets {
+                        .booking_type_tickets_container {
+                            width: 330px;
+                        }
+                    }
+                }
+                .booking_type_inputs {
+                    .date_container {
+                        input {
+                            width: 251px;
+                        }
+                    }
+                }
+            }
+        }
+        .booking_payment {
+            width: 360px;
+            height: 885px;
+            .booking_payment_overview {
+                width: 330px;
+                margin: 20px 15px 0px 15px;
+                .booking_payment_overview_img {
+                    width: 120px;
+                    height: 96px;
+                }
+            }
+            .booking_payment_total {
+                width: 330px;
+            }
+        }
+        .creditcard {
+            width: 330px;
+            background-size: contain;
+            background-position: center;
+        }
+        .booking_payment_frontcard {
+            bottom: 344px;
+            .card-name {
+                width: 290px;
+            }
+        }
+        .booking_payment_backcard {
+            bottom: 115px;
+        }
+        .booking_payment_buy {
+            bottom: 30px;
+        }
+        /* !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	 !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        .footer {
+            height: 296px;
+            .logo {
+                margin-top: 40px;
+                width: 133px;
+                height: 20px;
+                margin-bottom: 0px;
+            }
+            .logo_img {
+                width: 29px;
+                height: 16px;
+                background-position: center;
+                background-size: contain;
+                margin-bottom: 3px;
+            }
+            .logo_text {
+                font-size: 16px;
+                line-height: 18px;
+                letter-spacing: 5px;
+                margin-top: 14px;
+            }
+        }
+        .footer_container {
+            position: sticky;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sub_nav {
+            height: 68px;
+            width: 380px;
+            margin-top: 50px;
+            justify-self: flex-end;
+            column-count: 3;
+        }
+        .sub_nav_menu {
+            margin-left: 0px;
+            gap: 30px 30px;
+            margin-top: -5px;
+            .sub_nav_menu_item {
+                &:nth-of-type(3) {
+                    padding-left: 0px;
+                    padding-right: 12px;
+                    text-align: right;
+                }
+                &:nth-of-type(4) {
+                    padding-right: 0px;
+                    text-align: right;
+                }
+                &:nth-of-type(5) {
+                    padding-right: 12px;
+                    text-align: right;
+                }
+                &:nth-of-type(6) {
+                    padding-right: 0px;
+                    text-align: right;
+                }
+            }
+            .sub_nav_menu_item-name {
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 2px;
+            }
+        }
+        .icon-list {
+            width: 260px;
+            .icon-list_menu {
+                position: absolute;
+                width: 260px;
+                height: 48px;
+                bottom: 40px;
+                right: 60px;
+            }
+        }
+        .copy {
+            width: 420px;
+            height: 102px;
+            .copy_item {
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 2px;
+            }
+            .copy_link {
+                &:nth-of-type(1) {
+                    display: none;
+                }
+            }
+        }
+    }

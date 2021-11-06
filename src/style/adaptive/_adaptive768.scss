@@ -1,0 +1,538 @@
+@media (MAX-width: 768px) {
+    header {
+        width: 768px;
+    }
+    section {
+        width: 768px;
+    }
+    footer {
+        width: 768px;
+    }
+    .container {
+        max-width: 728px;
+    }
+    .title-dark {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .title-light {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .header {
+        height: 110px;
+        .logo {
+            margin-top: 85px;
+        }
+        .menu_btn {
+            top: 46px;
+        }
+    }
+    .menu-1024-container {
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        transition: all 0.3s ease-in;
+        .menu-1024 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 122px;
+            height: 263px;
+            margin-top: 35px;
+            margin-left: 35px;
+            padding: 0px;
+            .menu_item-1024 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 20px;
+                    line-height: 23px;
+                    letter-spacing: 2px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: $white;
+                }
+                .menu_item_icon-1024 {
+                    width: 12px;
+                    height: 12px;
+                    background-image: url(./assets/svg/menu_arrow.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+    .pictures-media-container {
+        position: absolute;
+        height: 493px;
+        bottom: 35px;
+        left: 0px;
+        margin-left: 35px;
+        transition: all 0.3s ease-in;
+        .pictures {
+            width: 100%;
+            height: 375px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px 20px;
+        }
+        .menu768-underline {
+            width: 100%;
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            bottom: 83px;
+        }
+        .icon-list {
+            width: 340px;
+            height: 50px;
+        }
+        .icon-list_menu {
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: 0 auto;
+        }
+    }
+    .welcome {
+        height: 861px;
+        .welcome_container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .welcome_info {
+            text-align: center;
+            margin-top: 0px;
+        }
+        .welcome_title {
+            font-size: 40px;
+            line-height: 60px;
+        }
+        .welcome_text {
+            font-size: 20px;
+            line-height: 23px;
+        }
+        .welcome_button {
+            display: none;
+        }
+        .welcome-bg-img {
+            background-image: url(./assets/img/welcome768.jpeg);
+            width: 100%;
+            height: 546px;
+            bottom: 100px;
+            position: absolute;
+            transition: all 0.3s ease-in;
+        }
+        .slider {
+            right: 88px;
+            height: 100px;
+            transition: all 0.3s ease-in;
+            .slider__count__item {
+                font-size: 20px;
+                line-height: 40px;
+            }
+        }
+    }
+    .visiting {
+        min-height: 1226px;
+    }
+    .visiting_underline-title {
+        bottom: -2px
+    }
+    .tour-title {
+        margin-top: 40px;
+    }
+    .underline-title::after {
+        bottom: -23px;
+    }
+    .cards-box {
+        column-count: 2;
+        margin-left: 56px;
+        margin-right: 56px;
+        margin-top: 63px;
+        row-gap: 40px;
+        &:nth-child(1) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        &:nth-child(2) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        &:nth-child(4) {
+            .card_title {
+                letter-spacing: 1px;
+            }
+        }
+        .card {
+            width: 280px;
+            height: 301px;
+            .card_title {
+                font-size: 22px;
+                line-height: 24px;
+                margin-bottom: 5px;
+            }
+            .card_title-underline {
+                width: 150px;
+            }
+            .card_text {
+                font-size: 17px;
+                line-height: 21px;
+                margin-top: 20px;
+            }
+        }
+    }
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EXPLORE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+    // EXPLORE //
+    // EXPLORE //
+    .explore {
+        min-height: 908px;
+    }
+    .explore_underline {
+        bottom: 0px
+    }
+    .explore_container {
+        flex-direction: column;
+    }
+    .explore_text-box {
+        display: flex;
+        flex-direction: column;
+    }
+    .explore_title {
+        margin-top: 40px;
+    }
+    .explore_info {
+        display: none;
+    }
+    .explore-image {
+        margin-top: 3px;
+        margin-left: 0px;
+        width: 100%;
+        height: 705px;
+        margin-bottom: 40px;
+    }
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!video !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+    // video //
+    // video //
+    .video {
+        height: 837px;
+        .video_text-box {
+            margin-top: 40px;
+        }
+        .player {
+            margin-top: 19px;
+            width: 728px;
+            height: 386px;
+            .big-play__background {
+                width: 80px;
+                height: 80px;
+                bottom: 55px;
+            }
+            .player__controls {
+                width: 668px;
+                height: 54px;
+                padding-left: 30px;
+                padding-right: 30px;
+                .toggle {
+                    height: 29px;
+                }
+                .progress {
+                    position: absolute;
+                    width: 728px;
+                    left: 0px;
+                    bottom: 54px;
+                    margin: 0px;
+                }
+                .volume-img {
+                    width: 27px;
+                    height: 21px;
+                }
+                .volume {
+                    width: 486px;
+                }
+                .fullscreen {
+                    width: 27px;
+                    height: 27px;
+                }
+            }
+        }
+        .video-playlist {
+            height: 199px;
+            margin-top: 20px;
+        }
+        .video-playlist_item {
+            width: 354px;
+            height: 199px;
+            &:nth-of-type(3) {
+                display: none;
+            }
+        }
+        .video-slider {
+            width: 190px;
+            margin: 20px auto 0;
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .gallery {
+        height: 1220px;
+        .gallery_container {
+            height: 100%;
+            .gallery_title {
+                margin-top: 40px;
+            }
+            .picture-container {
+                height: 1265px;
+                margin-top: 0px;
+                overflow-y: hidden;
+                .picture-inner-container {
+                    height: 3710px;
+                    column-count: 2;
+                    column-gap: 24px;
+                    .gallery-img {
+                        width: 352px;
+                    }
+                    &:nth-child(1) {
+                        margin-top: 40px;
+                    }
+                }
+                .picture-container-dark-shadow {
+                    height: 235px;
+                }
+            }
+        }
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .tickets {
+        min-height: 633px;
+    }
+    .tickets_title {
+        margin-top: 40px;
+        margin-bottom: 35px;
+    }
+    .tickets_underline-title {
+        bottom: 35px;
+    }
+    .tickets_order-box {
+        margin-top: 28px;
+    }
+    .tickets_image {
+        min-width: 444px;
+        max-height: 340px;
+    }
+    .tickets_select-form {
+        display: flex;
+        min-width: 0px;
+        justify-content: space-between;
+    }
+    .amount-box {
+        height: 430px;
+        margin-right: 49px;
+        .amoutn-box__choose-container {
+            height: 340px;
+        }
+    }
+    .amount-box_title {
+        margin-bottom: 40px;
+    }
+    .age-group:nth-of-type(2) {
+        margin-top: 25px;
+    }
+    .number_custom {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .number_actual {
+        width: 75px;
+    }
+    .amount-box_total-box {
+        margin-top: 37px;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!PARALAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .paralax {
+        height: 300px;
+    }
+    .paralax__background {
+        min-height: 300px;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!CONTACTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .contacts {
+        min-height: 925px;
+    }
+    .contacts_title {
+        margin-top: 40px;
+    }
+    .contacts_underline-title {
+        bottom: 13px;
+    }
+    .contacts_content-box {
+        margin-top: 50px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .contacts_info-box_title {
+        font-size: 20px;
+        line-height: 23px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .contacts_info-box_text {
+        font-size: 18px;
+        line-height: 21px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+        &:nth-of-type(1) {
+            margin-top: 40px;
+        }
+    }
+    .map {
+        margin-top: 40px;
+        max-width: 728px;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .overlay {
+        width: 768px;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .booking {
+        width: 590px;
+        height: 1479px;
+        .booking_form {
+            height: 1359px;
+            margin-top: 40px;
+            flex-direction: column;
+            align-items: center;
+            .booking_type {
+                width: 530px;
+                height: 644px;
+                .booking_type_tickets {
+                    .booking_type_tickets_container {
+                        width: 500px;
+                        .booking_type_tickets-underline {
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+                .booking_type_choice {
+                    height: 68px;
+                }
+            }
+            .booking_type_inputs {
+                height: 459px;
+                margin-top: 40px;
+                .date_container {
+                    input {
+                        width: 251px;
+                    }
+                }
+            }
+        }
+    }
+    .booking_payment {
+        width: 530px;
+        height: 665px;
+        .booking_payment_overview {
+            height: 151px;
+            width: 500px;
+            margin: 25px 15px 0px 15px;
+        }
+        .booking_payment_total {
+            width: 500px;
+            margin-left: 15px;
+        }
+    }
+    .booking_payment_frontcard {
+        left: 15px;
+        bottom: 127px;
+    }
+    .booking_payment_backcard {
+        right: 15px;
+        bottom: 95px;
+    }
+    .booking_payment_buy {
+        right: 15px;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		 !!!!!!!!!!!!!!!!!!!!!FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    .footer {
+        height: 308px;
+        .logo {
+            margin-top: 40px;
+        }
+    }
+    .footer_container {
+        position: sticky;
+        justify-content: space-between;
+    }
+    .sub_nav {
+        height: 121px;
+        width: 393px;
+        margin-top: 67px;
+        justify-self: flex-end;
+    }
+    .sub_nav_menu {
+        margin-left: 33px;
+        height: 100%;
+        width: 100%;
+        gap: 25px 25px;
+        margin-top: -5px;
+        .sub_nav_menu_item {
+            &:nth-of-type(4) {
+                padding-right: 37px;
+                text-align: right;
+            }
+            &:nth-of-type(5) {
+                padding-right: 35px;
+                text-align: right;
+            }
+            &:nth-of-type(6) {
+                padding-right: 20px;
+                text-align: right;
+            }
+        }
+        .sub_nav_menu_item-name {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+    .icon-list_menu {
+        position: absolute;
+        bottom: 40px;
+        right: 90px;
+        margin-bottom: 0px;
+    }
+    .copy {
+        width: 768px;
+        height: 102px;
+    }
+}

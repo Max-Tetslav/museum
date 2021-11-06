@@ -1,0 +1,254 @@
+.tickets {
+    min-height: 893px;
+}
+
+.tickets_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets_title {
+    margin: 75px 0;
+}
+
+.tickets_underline-title {
+    bottom: 75px;
+}
+
+.tickets_order-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tickets_image {
+    max-width: 720px;
+    margin-top: 28px;
+}
+
+.tickets-slider {
+    position: sticky;
+    width: 720px;
+    height: 550px;
+    overflow: hidden;
+}
+
+.tickets-slide {
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 0 100% 0);
+    position: absolute;
+}
+
+.tickets-active {
+    clip-path: inset(0 0 0 0);
+    transition: 1.5s;
+}
+
+.tickets_select-form {
+    display: flex;
+    min-width: 660px;
+    justify-content: space-between;
+}
+
+.tickets-type_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 211px;
+    min-width: 270px;
+    color: $black;
+    margin-top: 28px;
+    .ticket-box_title {
+        margin: 0;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 32px;
+        color: $black;
+    }
+    .inputs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 128px;
+    }
+    .radio-name {
+        padding-left: 35px;
+        display: block;
+        position: relative;
+        padding-left: 39px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+
+.radio-btn {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-btn:checked+label,
+.radio-btn:not(:checked)+label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.radio-btn:checked+label:before,
+.radio-btn:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    border: 2px solid $black;
+    border-radius: 100%;
+    background: inherit;
+}
+
+.radio-btn:checked+label::after,
+.radio-btn:not(:checked)+label::after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: $black;
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+
+.radio-btn:not(:checked)+label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.radio-btn:checked+label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.amount-box {
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 443px;
+    width: 175px;
+    margin-top: 28px;
+    .amoutn-box__choose-container {
+        height: 341px;
+        width: 150px;
+    }
+}
+
+.amount-box_title {
+    margin-top: 0px;
+    margin-bottom: 28px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: $black;
+    text-align: right;
+}
+
+.age-group {
+    margin: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.age-group:nth-of-type(2) {
+    margin-top: 9px;
+}
+
+.number_custom {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.number_minus {
+    padding: 0;
+    border: 1px solid $black;
+    border-right: 0;
+    background-color: initial;
+    color: $black;
+    width: 50px;
+}
+
+.number_actual {
+    text-align: center;
+    padding: 0;
+    border: 1px solid $black;
+    border-right: 0;
+    border-left: 0;
+    background-color: initial;
+    color: $black;
+    width: 50px;
+}
+
+.number_plus {
+    padding: 0;
+    border: 1px solid $black;
+    border-left: 0;
+    background-color: initial;
+    color: $black;
+    width: 50px;
+}
+
+.amount-box_total-box {
+    display: flex;
+    margin-top: 50px;
+    .amount-box_total {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        letter-spacing: 1.65px;
+        color: $black;
+    }
+}
+
+.submit-btn {
+    height: 50px;
+    width: 175px;
+    border: 0;
+    background-color: $black;
+    color: $white;
+    border-radius: 2px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+    &:hover {
+        color: $black;
+        background-color: $gold;
+        transition: all 0.2s ease;
+    }
+}

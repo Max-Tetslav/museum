@@ -1,0 +1,79 @@
+$dark-bg: #030303;
+$red: #710707;
+$gold: #9d8665;
+$white: #ffffff;
+$black: #000000;
+$fontSizeSectionName: 80px;
+$font2: 32px;
+html {
+    scroll-behavior: smooth;
+    transition: all 0.5s ease;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    ;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.section-dark {
+    background-color: $dark-bg;
+}
+
+.section-light {
+    background-color: $white;
+}
+
+.title-dark {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $fontSizeSectionName;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $white;
+    margin: 0;
+}
+
+.title-light {
+    margin-top: 75px;
+    margin-bottom: 0;
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $fontSizeSectionName;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $gold;
+}
+
+.container {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,128 @@
+.footer {
+    height: 265px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.sub_nav {
+    display: flex;
+    align-items: center;
+    height: 128px;
+    width: 363px;
+    margin-top: 87px;
+}
+
+.sub_nav_menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: -130px;
+    flex-wrap: wrap;
+    padding: 0;
+    height: 150px;
+    width: 500px;
+    column-count: 2;
+    &:nth-child(4) {
+        padding-left: 18px;
+    }
+    &:nth-child(5) {
+        padding-left: 18px;
+    }
+    &:nth-child(6) {
+        padding-left: 18px;
+    }
+}
+
+.sub_nav_menu_item {
+    &:nth-of-type(4) {
+        padding-left: 30px;
+    }
+    &:nth-of-type(5) {
+        padding-left: 30px;
+    }
+    &:nth-of-type(6) {
+        padding-left: 30px;
+    }
+}
+
+.sub_nav_menu_item-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: $white;
+    transition: all 0.3s ease-out;
+    &:hover {
+        color: $gold;
+        transition: all 0.3s ease-in;
+    }
+}
+
+.icon-list {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.icon-list_menu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+    padding: 0;
+    justify-content: space-between;
+    width: 340px;
+}
+
+.icon-list_menu_item {
+    width: 48px;
+    height: 48px;
+    border: solid 1px #666666;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-out;
+    &:hover {
+        border: solid 1px $gold;
+        transition: all 0.3s ease-in;
+    }
+}
+
+.youtube {
+    background-image: url(./assets/svg/Youtube.svg);
+    &:hover {
+        background-image: url(./assets/svg/Youtube-gold.svg);
+    }
+}
+
+.instagram {
+    background-image: url(./assets/svg/Instagram.svg);
+    &:hover {
+        background-image: url(./assets/svg/Instagram-gold.svg);
+    }
+}
+
+.facebook {
+    background-image: url(./assets/svg/Facebook.svg);
+    &:hover {
+        background-image: url(./assets/svg/Facebook-gold.svg);
+    }
+}
+
+.twitter {
+    background-image: url(./assets/svg/Twitter.svg);
+    &:hover {
+        background-image: url(./assets/svg/Twitter-gold.svg);
+    }
+}
+
+.pinterest {
+    background-image: url(./assets/svg/Pinterest.svg);
+    &:hover {
+        background-image: url(./assets/svg/Pinterest-gold.svg);
+    }
+}
