@@ -20,8 +20,8 @@
                 column-gap: 36px;
                 .gallery-img {
                     margin-bottom: 24px;
-                    transform: translate(0px, 110%);
-                    transition: all 0.8s ease;
+                    transform: translateY(20%);
+                    transition: all 1.3s ease;
                     opacity: 0;
                 }
                 &:nth-child(1) {

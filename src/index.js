@@ -435,12 +435,6 @@ function hotKey(e) {
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!VIDEO PLAYLIST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-
-// function stopFrame() {
-// 	iframe.stopVideo();
-// };
-
 Swiper.use([Navigation, Pagination]);
 
 new Swiper(".swiper", {
@@ -538,29 +532,25 @@ const sliderImages = document.querySelectorAll(".gallery-img");
 
 if (sliderImages.length > 0) {
 	window.addEventListener('scroll', checkSlide);
-
 }
 
 function checkSlide() {
 	sliderImages.forEach(image => {
-
 		const imageHeight = image.offsetHeight;
 		const imageOffset = offset(image).top;
 
-		const animStart = 5;
+		const animStart = 4;
 
 		let animPoint = window.innerHeight - imageHeight / animStart;
 
 
 
-		// if (imageHeight > window.innerHeight) {
-		//     animPoint = window.innerHeight - window.innerHeight / animStart;
-		// }
+		if (imageHeight > window.innerHeight) {
+			animPoint = window.innerHeight - window.innerHeight / animStart;
+		}
 
-		if ((pageYOffset > imageOffset - animPoint) && pageYOffset < (imageOffset + imageHeight)) {
+		if ((window.scrollY > imageOffset - animPoint) && window.scrollY < (imageOffset + imageHeight)) {
 			image.classList.add('slide-active');
-		} else {
-			image.classList.remove('slide-active');
 		}
 
 	});
@@ -572,7 +562,7 @@ function offset(element) {
 	return { top: rect.top + scrollTop };
 }
 
-checkSlide();
+// checkSlide();
 
 // const halfImg = (window.scrollY + window.innerHeight) - image.height / 2;
 // console.log(halfImg);
