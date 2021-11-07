@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 99;
     opacity: 1;
     visibility: hidden;
     transition: all 1s ease-in;
@@ -20,7 +20,7 @@
     width: 1440px;
     height: 845px;
     background-color: $white;
-    z-index: 4;
+    z-index: 100;
     opacity: 1;
     visibility: hidden;
     transition: all 1s ease-in;

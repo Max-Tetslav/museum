@@ -144,43 +144,55 @@
                 <div class="underline-title visiting_underline-title"></div>
                 <div class="cards-box">
                     <a class="card" href="./tours/tour1.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/1_card.jpeg" alt="card-img" loading="lazy">
+												<div class="card__image__container">
+													<img class="lazyload card_image" data-src="./assets/img/1_card.jpeg" alt="card-img" loading="lazy">
+												</div>
                         <h3 class="card_title">Royal Palace</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour2.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/2_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Denon Wing</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/2_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Denon Wing</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour3.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/3_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Colonnade Perrault</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/3_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Colonnade Perrault</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour4.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/4_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Greek hall</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/4_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Greek hall</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour5.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/5_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Mona Lisa</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/5_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Mona Lisa</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour6.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/6_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Night Palace</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/6_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Night Palace</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
@@ -208,18 +220,15 @@
                         <img class="compare-img " src="./assets/img/explore-after.jpeg" alt="masterpeace-after" width="720" height="700">
                     </div>
                 </div>
-
         </section>
         <section class="video section-light" id="video">
-
-				
             <div class="video_container">
                 <div class="video_text-box">
                     <h2 class="video_title title-light">Video journey</h2>
                     <p class="video_info">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
                 </div>
                 <div class="player">
-                    <video class="player__video viewer" src="./assets/video/video0.mp4"></video>
+                    <video class="player__video viewer" src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpeg"></video>
                     <div class="big-play__background">
                         <img class="lazyload player__button big-play" data-src="./assets/svg/video-play-big.svg" alt="play_big-btn" loading="lazy">
                     </div>
@@ -230,7 +239,7 @@
 														</button>
                         </div>
 
-                        <input class="progress range" type="range" name="progress" min="0" max="100" value="50" step="0.1">
+                        <input class="progress range" type="range" name="progress" min="0" max="100" value="0" step="0.1">
                         <button class="player__button mute-btn">
 															<img class="lazyload volume-img" data-src="./assets/svg/video-volume.svg" alt="mute" loading="lazy">
 												</button>
@@ -269,39 +278,6 @@
 										<button class="video-slider__arrow-right"></button>
 									</div>
 								</div>
-<!-- 
-
-                <div class="swiper video-playlist">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/2OR0OCr6uRE?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/zp1BXPX8jcU?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/aWmJ5DgyWPI?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/Vi5D6FKhRmo?controls=0" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/NOhDysLnTvY?controls=0" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-									</div>
-									
-									
-									<div class="swiper-navigation">
-										<button class="swiper-button-prev"></button>
-										<div class="swiper-pagination"></div>
-                    <!-- <div class="video-slider__point video-slider__point-selected"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div> -->
-											<!-- <button class="swiper-button-next"></button>
-										</div>
-									</div> --> 
             </div>
         </section>
         <section class="gallery section-dark" id="gallery">
@@ -353,10 +329,11 @@
                                     <input class="number_actual senior-number" type="number" min="0" max="20" value="0">
                                     <button class="number_plus senior-plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                 </div>
-                                <div class="amount-box_total-box">
-                                    <p class="amount-box_total">Total €</p>
-                                    <p class="amount-box_total amount-box_sum">0</p>
-                                </div>
+                                
+                            </div>
+														<div class="amount-box_total-box">
+                              <p class="amount-box_total">Total € :</p>
+                              <p class="amount-box_total amount-box_sum">0</p>
                             </div>
                             <button class="submit-btn" type="submit">Buy Now</button>
                         </div>

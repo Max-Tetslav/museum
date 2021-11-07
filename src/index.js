@@ -305,7 +305,7 @@ function fullSize() {
 	}
 }
 
-// sessionStorage.setItem('volume', `${volumeBar.value}`);
+sessionStorage.setItem('volume', `${volumeBar.value}`);
 
 function isMute() {
 	if (volumeBar.value != 0) {
@@ -337,12 +337,14 @@ function grabTime() {
 function updateVolume() {
 	volumeBar.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + volumeBar.value + '%, #C4C4C4 ' + volumeBar.value + '%, #C4C4C4 100%)'
 	video.volume = volumeBar.value / 100;
+	// sessionStorage.setItem('volume', `${volumeBar.value}`);
 	if (volumeBar.value == 0) {
 		volumeImg.src = './assets/svg/video-mute.svg';
 	} else {
 		volumeImg.src = './assets/svg/video-volume.svg';
 	}
 }
+
 
 function hotKey(e) {
 	switch (e.code) {
@@ -372,6 +374,7 @@ function hotKey(e) {
 			}
 			break;
 		case 'Space':
+			e.preventDefault();
 			togglePlay();
 			break;
 	}
@@ -416,18 +419,17 @@ function hotKey(e) {
 //     video.src = `assets/video/Sea` + videoNumber + `.mp4`;
 // }
 
-// video.addEventListener('timeupdate', updateProgress);
-// progressBar.addEventListener('input', grabTime);
-// video.addEventListener('ended', isEnd);
-// video.addEventListener('click', togglePlay);
-// playBtn.addEventListener('click', togglePlay);
-// playBtn_big.addEventListener('click', togglePlay);
-// fullScreen.addEventListener('click', fullSize);
-// mute.addEventListener('click', isMute)
-// volumeBar.addEventListener('input', updateVolume);
-// window.addEventListener('keypress', hotKey);
-// prevBtn.addEventListener('click', sliderPrev);
-// nextBtn.addEventListener('click', sliderNext);
+video.addEventListener('timeupdate', updateProgress);
+progressBar.addEventListener('input', grabTime);
+video.addEventListener('ended', isEnd);
+video.addEventListener('click', togglePlay);
+playBtn.addEventListener('click', togglePlay);
+playBtn_big.addEventListener('click', togglePlay);
+fullScreen.addEventListener('click', fullSize);
+mute.addEventListener('click', isMute)
+volumeBar.addEventListener('input', updateVolume);
+window.addEventListener('keypress', hotKey);
+
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!VIDEO PLAYLIST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -511,23 +513,6 @@ addImages();
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!GALERY ANIMATION ON SCROLL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-// function debounce(func, wait = 20, immediate = true) {
-//     let timeout;
-//     return function() {
-//         let context = this,
-//             args = arguments;
-
-//         let later = function() {
-//             timeout = null;
-//             if (!immediate) func.apply(context, args);
-//         };
-//         let callNow = immediate && !timeout;
-//         clearTimeout(timeout);
-//         timeout = setTimeout(later, wait);
-//         if (callNow) func.apply(context, args);
-//     };
-// }
-
 const sliderImages = document.querySelectorAll(".gallery-img");
 
 if (sliderImages.length > 0) {
@@ -562,30 +547,6 @@ function offset(element) {
 	return { top: rect.top + scrollTop };
 }
 
-// checkSlide();
-
-// const halfImg = (window.scrollY + window.innerHeight) - image.height / 2;
-// console.log(halfImg);
-
-
-
-// const imageBotton = (image.offsetTop + image.height);
-// console.log(image.offsetTop);
-// const isHalfShown = image.offsetTop < halfImg;
-// // console.log(image.offsetTop);
-
-// // console.log(isHalfShown);
-// const isNotScrolledPast = window.scrollY < imageBotton;
-// // console.log(isNotScrolledPast);
-
-
-// if (isHalfShown && isNotScrolledPast) {
-//     image.classList.add('active');
-// } else {
-//     image.classList.remove('active');
-// }
-
-
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TICKETS SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TICKETS SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -613,8 +574,6 @@ function repeater() {
 	},
 		2000)
 }
-
-
 
 //stop autoplay on mouseover
 
@@ -673,6 +632,7 @@ window.onload = function () {
 	basicNumber.value = Number(sessionStorage.getItem('basic'));
 	// totalPrice.innerHTML = Number(sessionStorage.getItem('totalPrice'));
 	totalPrice.innerHTML = (Number(sessionStorage.getItem('price')) * Number(basicNumber.value)) + ((Number(sessionStorage.getItem('price')) / 2) * Number(seniorNumber.value));
+	// console.log(typeof totalPrice.textContent);
 };
 
 const ticketTypes = document.querySelectorAll('.radio-btn');
@@ -702,7 +662,8 @@ function countTotalPrice() {
 	ticketTypes.forEach(type => {
 		if (type.checked) {
 			totalPrice.innerHTML = (Number(price) * Number(basicNumber.value)) + (Number(price) / 2 * Number(seniorNumber.value));
-			sessionStorage.setItem('totalPrice', totalPrice.textContent);
+			sessionStorage.setItem('totalPrice', Number(totalPrice.textContent));
+			// console.log(typeof totalPrice.textContent);
 			sessionStorage.setItem('basic', basicNumber.value);
 			sessionStorage.setItem('senior', seniorNumber.value);
 		}

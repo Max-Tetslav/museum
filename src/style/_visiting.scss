@@ -40,12 +40,15 @@
                 transition: all 0.3s ease-in;
             }
 						img{
-							transform: scale(0.99);
+							transform: scale(1.05);
 						}
         }
+				.card__image__container{
+					overflow: hidden;
+				}
         .card_image {
             width: 100%;
-						transition: 0.3s;
+						transition: 0.5s;
         }
         .card_title {
             font-family: Forum;
