@@ -3,81 +3,79 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
-
-
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BURGER MENU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BURGER MENU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BURGER MENU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const menuBtn = document.querySelector('.menu_btn');
-const welcomeInfo = document.querySelector('.welcome_info');
-const menu = document.querySelector('.menu-1024-container');
-const welcomeImage = document.querySelector('.welcome-bg-img');
-const welcomeSlider = document.querySelector('.slider');
-const menu768 = document.querySelector('.pictures-media-container');
-const menuLink = document.querySelectorAll('.menu_item-1024');
+const MENU_BTN_EL = document.querySelector('.menu_btn'),
+	WELCOME_INFO_EL = document.querySelector('.welcome_info'),
+	MENU_CONTAINER_EL = document.querySelector('.menu-1024-container'),
+	WELCOME_IMAGE_EL = document.querySelector('.welcome-bg-img'),
+	WELCOME_SLIDER_PAGINATION_EL = document.querySelector('.slider'),
+	MENU_768_CONTAINER_EL = document.querySelector('.pictures-media-container'),
+	MENU_LINK_ELS = document.querySelectorAll('.menu_item-1024');
 
 let isOpen = false;
 
-function toOpen() {
+function openBurger() {
 	if (window.screen.width <= 420) {
-		menu768.style.width = '310px';
-		menu.style.width = '297px';
-		welcomeInfo.classList.toggle('hide');
-		welcomeSlider.style.display = 'none';
-		welcomeImage.classList.toggle('hide');
+		MENU_768_CONTAINER_EL.style.width = '310px';
+		MENU_CONTAINER_EL.style.width = '297px';
+		WELCOME_INFO_EL.classList.toggle('hide');
+		WELCOME_SLIDER_PAGINATION_EL.style.display = 'none';
+		WELCOME_IMAGE_EL.classList.toggle('hide');
 	} else if (window.screen.width <= 768) {
-		menu.style.width = '297px';
-		welcomeInfo.classList.toggle('hide');
-		welcomeImage.classList.toggle('hide');
-		welcomeSlider.style.display = 'none';
-		menu768.style.width = '658px';
+		MENU_CONTAINER_EL.style.width = '297px';
+		WELCOME_INFO_EL.classList.toggle('hide');
+		WELCOME_IMAGE_EL.classList.toggle('hide');
+		WELCOME_SLIDER_PAGINATION_EL.style.display = 'none';
+		MENU_768_CONTAINER_EL.style.width = '658px';
 	} else if (window.screen.width <= 1024 && window.screen.width > 768) {
-		menu.style.width = '297px';
-		welcomeInfo.classList.toggle('hide');
+		MENU_CONTAINER_EL.style.width = '297px';
+		WELCOME_INFO_EL.classList.toggle('hide');
 	}
 	isOpen = !isOpen;
-	menuLink.forEach(item => item.addEventListener('click', openMenu));
+	MENU_LINK_ELS.forEach(item => item.addEventListener('click', openMenu));
 }
 
-function toClose() {
+function closeBurger() {
 	if (window.screen.width <= 420) {
-		menu768.style.width = '0px';
-		menu.style.width = '0px';
+		MENU_768_CONTAINER_EL.style.width = '0px';
+		MENU_CONTAINER_EL.style.width = '0px';
 		setTimeout(() => {
-			welcomeInfo.classList.toggle('hide');
-			welcomeSlider.style.display = 'flex';
-			welcomeImage.classList.toggle('hide');
+			WELCOME_INFO_EL.classList.toggle('hide');
+			WELCOME_SLIDER_PAGINATION_EL.style.display = 'flex';
+			WELCOME_IMAGE_EL.classList.toggle('hide');
 		}, 500);
 	} else if (window.screen.width <= 768) {
-		menu768.style.width = '0px';
-		menu.style.width = '0px';
+		MENU_768_CONTAINER_EL.style.width = '0px';
+		MENU_CONTAINER_EL.style.width = '0px';
 		setTimeout(() => {
-			welcomeInfo.classList.toggle('hide');
-			welcomeSlider.style.display = 'flex';
-			welcomeImage.classList.toggle('hide');
+			WELCOME_INFO_EL.classList.toggle('hide');
+			WELCOME_SLIDER_PAGINATION_EL.style.display = 'flex';
+			WELCOME_IMAGE_EL.classList.toggle('hide');
 		}, 500);
 	} else if (window.screen.width <= 1024 && window.screen.width > 768) {
-		menu.style.width = '0px';
-		setTimeout(() => welcomeInfo.classList.toggle('hide'), 500);
+		MENU_CONTAINER_EL.style.width = '0px';
+		setTimeout(() => WELCOME_INFO_EL.classList.toggle('hide'), 500);
 	}
 	isOpen = !isOpen;
 }
 
 function openMenu() {
-	menuBtn.classList.toggle('menu_open');
+	MENU_BTN_EL.classList.toggle('menu_open');
 
 	if (isOpen) {
-		toClose();
+		closeBurger();
 	} else {
-		toOpen();
-
+		openBurger();
 	}
 
 }
-menuBtn.addEventListener('click', openMenu);
+
+MENU_BTN_EL.addEventListener('click', openMenu);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WELCOME SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -85,107 +83,88 @@ menuBtn.addEventListener('click', openMenu);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WELCOME SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const slides = document.querySelectorAll('.slide');
-const points = document.querySelectorAll('.point');
-const textNumber = document.querySelector('.slider__count__actual');
-const nextSlide = document.querySelector('.arrow-right');
-const prevSlide = document.querySelector('.arrow-left');
-const numbersOfSlides = slides.length;
+const WELCOME_SLIDES_ELMS = document.querySelectorAll('.slide'),
+	BULLETS_ELEMS = document.querySelectorAll('.point'),
+	WELCOME_ACTUAL_SLIDE_EL = document.querySelector('.slider__count__actual'),
+	NEXT_SLIDE_BTN_EL = document.querySelector('.arrow-right'),
+	PREV_SLIDE_BTN_EL = document.querySelector('.arrow-left'),
+	WELCOME_NUMBER_OF_SLIDES = WELCOME_SLIDES_ELMS.length;
 let slideNumber = 0;
-let pointNumber = slideNumber;
-let currentDirection = null;
-
-// prevSlide.addEventListener('mouseover', () => {
-//     if (slideNumber == 0) {
-//         slides[slideNumber].style.clipPath = 'inset(0 0 0 100%)';
-//     }
-// })
 
 function slideForward() {
-	currentDirection = true;
-	console.log(currentDirection);
-	slides.forEach(slide => {
+	WELCOME_SLIDES_ELMS.forEach(slide => {
 		slide.classList.remove('prev-slide');
 		slide.classList.add('next-slide');
 	})
-	slides[slideNumber].classList.add('prev-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('prev-slide');
 
 	slideNumber++;
 
-	slides.forEach(slide => {
-		// slide.style.clipPath = 'inset(0 100% 0 0)';
+	WELCOME_SLIDES_ELMS.forEach(slide => {
 		slide.classList.remove('active-slide');
 	});
 
 	if (slideNumber > 4) {
 		slideNumber = 0;
-		points[slideNumber].classList.add('point-selected');
-		points[numbersOfSlides - 1].classList.remove('point-selected');
+		BULLETS_ELEMS[slideNumber].classList.add('point-selected');
+		BULLETS_ELEMS[WELCOME_NUMBER_OF_SLIDES - 1].classList.remove('point-selected');
 	} else {
-		points[slideNumber - 1].classList.remove('point-selected');
-		points[slideNumber].classList.add('point-selected');
+		BULLETS_ELEMS[slideNumber - 1].classList.remove('point-selected');
+		BULLETS_ELEMS[slideNumber].classList.add('point-selected');
 	};
 
-
 	updateTextNumber();
-	slides[slideNumber].classList.add('active-slide');
-	slides[slideNumber].classList.add('next-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('active-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('next-slide');
 }
 
 function slideBack() {
-	// if (slideNumber) {
-	// 	slides[slides.length - 1].classList.add('prev-slide');
-	// }
-	currentDirection = false;
-	console.log(currentDirection);
-	slides.forEach((slide, index) => {
+	WELCOME_SLIDES_ELMS.forEach(slide => {
 		slide.classList.add('prev-slide');
 		slide.classList.remove('next-slide');
 	});
 
-
-
-	slides[slideNumber].classList.add('next-slide');
-	slides[slideNumber].classList.remove('prev-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('next-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.remove('prev-slide');
 
 	slideNumber--;
-	slides.forEach(slide => {
+
+	WELCOME_SLIDES_ELMS.forEach(slide => {
 		slide.classList.remove('active-slide');
 	});
 
 	if (slideNumber < 0) {
 		slideNumber = 4;
-		points[slideNumber].classList.add('point-selected');
-		points[0].classList.remove('point-selected');
+		BULLETS_ELEMS[slideNumber].classList.add('point-selected');
+		BULLETS_ELEMS[0].classList.remove('point-selected');
 	} else {
-		points[slideNumber + 1].classList.remove('point-selected');
-		points[slideNumber].classList.add('point-selected');
+		BULLETS_ELEMS[slideNumber + 1].classList.remove('point-selected');
+		BULLETS_ELEMS[slideNumber].classList.add('point-selected');
 	}
 	updateTextNumber()
-	slides[slideNumber].classList.add('active-slide');
-	slides[slideNumber].classList.add('prev-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('active-slide');
+	WELCOME_SLIDES_ELMS[slideNumber].classList.add('prev-slide');
 }
 
 function updateTextNumber() {
-	textNumber.innerHTML = `0${slideNumber + 1}`;
+	WELCOME_ACTUAL_SLIDE_EL.innerHTML = `0${slideNumber + 1}`;
 }
 
-
-points.forEach((point, index) => point.addEventListener('click', () => {
-	slides.forEach(slide => {
+BULLETS_ELEMS.forEach((bullet, index) => bullet.addEventListener('click', () => {
+	WELCOME_SLIDES_ELMS.forEach(slide => {
 		slide.classList.remove('active-slide');
 	});
-	points.forEach(point => {
-		point.classList.remove('point-selected');
+	BULLETS_ELEMS.forEach(bullet => {
+		bullet.classList.remove('point-selected');
 	})
-	slides[index].classList.add('active-slide');
-	points[index].classList.add('point-selected');
+	WELCOME_SLIDES_ELMS[index].classList.add('active-slide');
+	BULLETS_ELEMS[index].classList.add('point-selected');
 	slideNumber = index;
 	updateTextNumber();
 }));
 
-nextSlide.addEventListener('click', slideForward);
-prevSlide.addEventListener('click', slideBack);
+NEXT_SLIDE_BTN_EL.addEventListener('click', slideForward);
+PREV_SLIDE_BTN_EL.addEventListener('click', slideBack);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EXPLORE SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -193,21 +172,31 @@ prevSlide.addEventListener('click', slideBack);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EXPLORE SLIDER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const exploreSlider = document.querySelector('.explore-slider');
-const afterImage = document.querySelector('.img-compare-after');
-const beforeImage = document.querySelector('.img-compare-before');
+const EXPLORE_COMPARE_SLIDER_EL = document.querySelector('.explore-slider'),
+	COMPARE_IMAGE = document.querySelector('.img-compare-after');
 
 function compareImages() {
-	let clicked = 0;
-	let width = afterImage.offsetWidth;
-	let heigh = afterImage.offsetHeight;
-	afterImage.style.width = (width / 2) + 'px';
-	afterImage.style.heigh = (heigh);
-	exploreSlider.style.left = (width / 2) - (exploreSlider.offsetWidth / 2) + 'px';
-	exploreSlider.addEventListener('mousedown', slideReady);
+	let clicked = 0,
+		width = COMPARE_IMAGE.offsetWidth,
+		heigh = COMPARE_IMAGE.offsetHeight;
+	COMPARE_IMAGE.style.width = (width / 2) + 'px';
+	COMPARE_IMAGE.style.heigh = (heigh);
+	EXPLORE_COMPARE_SLIDER_EL.style.left = (width / 2) - (EXPLORE_COMPARE_SLIDER_EL.offsetWidth / 2) + 'px';
+	EXPLORE_COMPARE_SLIDER_EL.addEventListener('mousedown', slideReady);
 	window.addEventListener('mouseup', slideFinish);
-	exploreSlider.addEventListener('touchstart', slideReady);
+	EXPLORE_COMPARE_SLIDER_EL.addEventListener('touchstart', slideReady);
 	window.addEventListener('touchend', slideFinish);
+
+
+	function getCursorPosition(e) {
+		let imgPosition,
+			cursorPosition = 0;
+		e = e || window.event;
+		imgPosition = COMPARE_IMAGE.getBoundingClientRect();
+		cursorPosition = window.event.pageX - imgPosition.left;
+		cursorPosition = cursorPosition - window.pageXOffset;
+		return cursorPosition;
+	}
 
 	function slideReady(e) {
 		e.preventDefault();
@@ -233,19 +222,9 @@ function compareImages() {
 		slide(position);
 	}
 
-	function getCursorPosition(e) {
-		let imgPosition;
-		let cursorPosition = 0;
-		e = e || window.event;
-		imgPosition = afterImage.getBoundingClientRect();
-		cursorPosition = window.event.pageX - imgPosition.left;
-		cursorPosition = cursorPosition - window.pageXOffset;
-		return cursorPosition;
-	}
-
 	function slide(cursorPosition) {
-		afterImage.style.width = cursorPosition + 'px';
-		exploreSlider.style.left = afterImage.offsetWidth - (exploreSlider.width / 2) + 'px';
+		COMPARE_IMAGE.style.width = cursorPosition + 'px';
+		EXPLORE_COMPARE_SLIDER_EL.style.left = COMPARE_IMAGE.offsetWidth - (EXPLORE_COMPARE_SLIDER_EL.width / 2) + 'px';
 	}
 }
 
@@ -257,177 +236,132 @@ compareImages();
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!VIDEO PLAYER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const video = document.querySelector('.viewer'),
-	playBtn = document.querySelector('.toggle'),
-	playBtn_img = document.querySelector('.toggle__img'),
-	playBtn_big = document.querySelector('.big-play__background'),
-	fullScreen = document.querySelector('.fullscreen'),
-	fullscreenImg = document.querySelector('.fullscreenImg'),
-	player = document.querySelector('.player'),
-	mute = document.querySelector('.mute-btn'),
-	volumeImg = document.querySelector('.volume-img'),
-	progressBar = document.querySelector('.progress'),
-	volumeBar = document.querySelector('.volume'),
-	nextBtn = document.querySelector('.nextBtn'),
-	prevBtn = document.querySelector('.prevBtn');
-let notFull = true,
-	notMute = true,
-	videoNumber = 1;
+const VIDEO_EL = document.querySelector('.viewer'),
+	PLAY_BTN_EL = document.querySelector('.toggle'),
+	BIG_PLAY_IMG_EL = document.querySelector('.toggle__img'),
+	BIG_PLAY_CONTAINER_EL = document.querySelector('.big-play__background'),
+	FULLSCREEN_BTN_EL = document.querySelector('.fullscreen'),
+	FULLSCREEN_IMG_EL = document.querySelector('.fullscreenImg'),
+	PLAYER_CONTAINER_EL = document.querySelector('.player'),
+	VOLUME_BTN_EL = document.querySelector('.mute-btn'),
+	VOLUME_IMG_EL = document.querySelector('.volume-img'),
+	PROGRESS_BAR_EL = document.querySelector('.progress'),
+	VOLUME_BAR_EL = document.querySelector('.volume');
+let isFull = false;
 
 
 function togglePlay() {
-	if (video.paused) {
-		video.play();
-		playBtn_big.style.visibility = 'hidden';
-		playBtn_img.src = './assets/svg/video-pause.svg';
+	if (VIDEO_EL.paused) {
+		VIDEO_EL.play();
+		BIG_PLAY_CONTAINER_EL.style.visibility = 'hidden';
+		BIG_PLAY_IMG_EL.src = './assets/svg/video-pause.svg';
 
 	} else {
-		video.pause();
-		playBtn_big.style.visibility = '';
-		playBtn_img.src = './assets/svg/video-play.svg';
+		VIDEO_EL.pause();
+		BIG_PLAY_CONTAINER_EL.style.visibility = '';
+		BIG_PLAY_IMG_EL.src = './assets/svg/video-play.svg';
 	}
 }
 
 function isEnd() {
-	playBtn_big.style.visibility = '';
-	playBtn_img.src = 'assets/svg/video-play.svg';
+	BIG_PLAY_CONTAINER_EL.style.visibility = '';
+	BIG_PLAY_IMG_EL.src = 'assets/svg/video-play.svg';
 }
 
 function fullSize() {
-	if (notFull) {
-		player.requestFullscreen();
-		notFull = false;
-		fullscreenImg.src = './assets/svg/video-fullscreen_exit.svg';
+	if (!isFull) {
+		PLAYER_CONTAINER_EL.requestFullscreen();
+		isFull = true;
+		FULLSCREEN_IMG_EL.src = './assets/svg/video-fullscreen_exit.svg';
 	} else {
 		document.exitFullscreen();
-		notFull = true;
-		fullscreenImg.src = './assets/svg/video-fullscreen.svg';
+		isFull = false;
+		FULLSCREEN_IMG_EL.src = './assets/svg/video-fullscreen.svg';
 	}
 }
 
-sessionStorage.setItem('volume', `${volumeBar.value}`);
+sessionStorage.setItem('volume', `${VOLUME_BAR_EL.value}`);
 
 function isMute() {
-	if (volumeBar.value != 0) {
-		video.muted = true;
-		volumeBar.value = 0;
-		volumeImg.src = './assets/svg/video-mute.svg';
+	if (VOLUME_BAR_EL.value != 0) {
+		VIDEO_EL.muted = true;
+		VOLUME_BAR_EL.value = 0;
+		VOLUME_IMG_EL.src = './assets/svg/video-mute.svg';
 		updateVolume();
 	} else {
-		video.muted = false;
-		volumeBar.value = sessionStorage.getItem('volume');
-		volumeImg.src = './assets/svg/video-volume.svg';
+		VIDEO_EL.muted = false;
+		VOLUME_BAR_EL.value = sessionStorage.getItem('volume');
+		VOLUME_IMG_EL.src = './assets/svg/video-volume.svg';
 		updateVolume();
 	}
 }
 
 function updateProgress() {
-	const percent = (video.currentTime / video.duration) * 100;
-	progressBar.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + percent + '%, #C4C4C4 ' + percent + '%, #C4C4C4 100%)';
-	progressBar.value = percent;
+	const percent = (VIDEO_EL.currentTime / VIDEO_EL.duration) * 100;
+	PROGRESS_BAR_EL.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + percent + '%, #C4C4C4 ' + percent + '%, #C4C4C4 100%)';
+	PROGRESS_BAR_EL.value = percent;
 }
 
 
 function grabTime() {
-	const percent = progressBar.value;
-	progressBar.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + percent + '%, #C4C4C4 ' + percent + '%, #C4C4C4 100%)';
-	video.currentTime = (video.duration / progressBar.max) * progressBar.value;
+	const percent = PROGRESS_BAR_EL.value;
+	PROGRESS_BAR_EL.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + percent + '%, #C4C4C4 ' + percent + '%, #C4C4C4 100%)';
+	VIDEO_EL.currentTime = (VIDEO_EL.duration / PROGRESS_BAR_EL.max) * PROGRESS_BAR_EL.value;
 }
 
 function updateVolume() {
-	volumeBar.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + volumeBar.value + '%, #C4C4C4 ' + volumeBar.value + '%, #C4C4C4 100%)'
-	video.volume = volumeBar.value / 100;
-	// sessionStorage.setItem('volume', `${volumeBar.value}`);
-	if (volumeBar.value == 0) {
-		volumeImg.src = './assets/svg/video-mute.svg';
+	VOLUME_BAR_EL.style.background = 'linear-gradient(to right, #710707 0%, #710707 ' + VOLUME_BAR_EL.value + '%, #C4C4C4 ' + VOLUME_BAR_EL.value + '%, #C4C4C4 100%)'
+	VIDEO_EL.volume = VOLUME_BAR_EL.value / 100;
+	if (VOLUME_BAR_EL.value == 0) {
+		VOLUME_IMG_EL.src = './assets/svg/video-mute.svg';
 	} else {
-		volumeImg.src = './assets/svg/video-volume.svg';
+		VOLUME_IMG_EL.src = './assets/svg/video-volume.svg';
 	}
 }
-
 
 function hotKey(e) {
-	switch (e.code) {
-		case 'KeyK':
-			togglePlay();
-			break;
-		case 'KeyM':
-			isMute();
-			break;
-		case 'KeyF':
-			fullSize();
-			break;
-		case 'KeyJ':
-			video.currentTime -= 5;
-			break;
-		case 'KeyL':
-			video.currentTime += 5;
-			break;
-		case 'Comma':
-			if (video.playbackRate != 0.25) {
-				video.playbackRate -= 0.25;
-			}
-			break;
-		case 'Period':
-			if (video.playbackRate <= 2) {
-				video.playbackRate += 0.25;
-			}
-			break;
-		case 'Space':
-			e.preventDefault();
-			togglePlay();
-			break;
-	}
+	// switch (e.code) {
+	// 	case 'KeyK':
+	// 		togglePlay();
+	// 		break;
+	// 	case 'KeyM':
+	// 		isMute();
+	// 		break;
+	// 	case 'KeyF':
+	// 		fullSize();
+	// 		break;
+	// 	case 'KeyJ':
+	// 		VIDEO_EL.currentTime -= 5;
+	// 		break;
+	// 	case 'KeyL':
+	// 		VIDEO_EL.currentTime += 5;
+	// 		break;
+	// 	case 'Comma':
+	// 		if (VIDEO_EL.playbackRate != 0.25) {
+	// 			VIDEO_EL.playbackRate -= 0.25;
+	// 		}
+	// 		break;
+	// 	case 'Period':
+	// 		if (VIDEO_EL.playbackRate <= 2) {
+	// 			VIDEO_EL.playbackRate += 0.25;
+	// 		}
+	// 		break;
+	// 	case 'Space':
+	// 		e.preventDefault();
+	// 		togglePlay();
+	// 		break;
+	// }
 }
 
-// function stopSpaceScroll() {
-//     document.addEventListener(('keypress', (e) => {
-//         if (e.code == 'Space') {
-//             e.preventDefault();
-//             return false;
-//         };
-//     }))
-// }
-
-// function sliderNext() {
-//     if (video.played) {
-//         togglePlay();
-//         progressBar.style.background = 'linear-gradient(to right,  #C4C4C4 0%, #C4C4C4 100%)';
-//     }
-
-//     videoNumber++;
-
-//     if (videoNumber > 5) {
-//         videoNumber = 1;
-//     }
-
-//     video.src = `assets/video/Sea` + videoNumber + `.mp4`;
-// }
-
-// function sliderPrev() {
-//     if (video.played) {
-//         togglePlay();
-//         progressBar.style.background = 'linear-gradient(to right,  #C4C4C4 0%, #C4C4C4 100%)';
-//     }
-
-//     videoNumber--;
-
-//     if (videoNumber < 1) {
-//         videoNumber = 5;
-//     }
-
-//     video.src = `assets/video/Sea` + videoNumber + `.mp4`;
-// }
-
-video.addEventListener('timeupdate', updateProgress);
-progressBar.addEventListener('input', grabTime);
-video.addEventListener('ended', isEnd);
-video.addEventListener('click', togglePlay);
-playBtn.addEventListener('click', togglePlay);
-playBtn_big.addEventListener('click', togglePlay);
-fullScreen.addEventListener('click', fullSize);
-mute.addEventListener('click', isMute)
-volumeBar.addEventListener('input', updateVolume);
+VIDEO_EL.addEventListener('timeupdate', updateProgress);
+PROGRESS_BAR_EL.addEventListener('input', grabTime);
+VIDEO_EL.addEventListener('ended', isEnd);
+VIDEO_EL.addEventListener('click', togglePlay);
+PLAY_BTN_EL.addEventListener('click', togglePlay);
+BIG_PLAY_CONTAINER_EL.addEventListener('click', togglePlay);
+FULLSCREEN_BTN_EL.addEventListener('click', fullSize);
+VOLUME_BTN_EL.addEventListener('click', isMute)
+VOLUME_BAR_EL.addEventListener('input', updateVolume);
 window.addEventListener('keypress', hotKey);
 
 
@@ -470,7 +404,7 @@ new Swiper(".swiper", {
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!GALERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const pictureContainer = document.querySelector('.picture-inner-container');
+const PICTURES_CONTAINER_EL = document.querySelector('.picture-inner-container');
 
 let images = [];
 
@@ -492,11 +426,9 @@ let randomImages = shuffle(images);
 function createImg(name, index) {
 	const img = document.createElement('img');
 	img.classList.add('gallery-img');
-	// img.classList.add('slide-down');
-	// img.classList.add('slide-in');
 	img.src = name;
 	img.alt = `galery${index}`;
-	pictureContainer.append(img);
+	PICTURES_CONTAINER_EL.append(img);
 	if (index == 0) {
 		img.style.marginTop = '50px';
 	}
@@ -513,22 +445,19 @@ addImages();
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!GALERY ANIMATION ON SCROLL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const sliderImages = document.querySelectorAll(".gallery-img");
+const IMAGE_ELEMS = document.querySelectorAll(".gallery-img");
 
-if (sliderImages.length > 0) {
+if (IMAGE_ELEMS.length > 0) {
 	window.addEventListener('scroll', checkSlide);
 }
 
 function checkSlide() {
-	sliderImages.forEach(image => {
-		const imageHeight = image.offsetHeight;
-		const imageOffset = offset(image).top;
-
-		const animStart = 4;
+	IMAGE_ELEMS.forEach(image => {
+		const imageHeight = image.offsetHeight,
+			imageOffset = offset(image).top,
+			animStart = 4;
 
 		let animPoint = window.innerHeight - imageHeight / animStart;
-
-
 
 		if (imageHeight > window.innerHeight) {
 			animPoint = window.innerHeight - window.innerHeight / animStart;
@@ -537,13 +466,12 @@ function checkSlide() {
 		if ((window.scrollY > imageOffset - animPoint) && window.scrollY < (imageOffset + imageHeight)) {
 			image.classList.add('slide-active');
 		}
-
 	});
 }
 
 function offset(element) {
-	const rect = element.getBoundingClientRect();
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	const rect = element.getBoundingClientRect(),
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	return { top: rect.top + scrollTop };
 }
 
@@ -604,10 +532,10 @@ const firstForm = document.querySelector('.tickets_select-form')
 function openForm() {
 	overlay.style.visibility = 'visible';
 	form.style.visibility = 'visible';
-
 }
 
-function closeForm() {
+function closeForm(e) {
+	// e.stopPropagation()
 	overlay.style.visibility = 'hidden';
 	form.style.visibility = 'hidden';
 }
@@ -626,13 +554,13 @@ firstForm.addEventListener('submit', mySubmitFunction);
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!HOME PAGE FORM DATA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 window.onload = function () {
 	ticketTypes[Number(sessionStorage.getItem('typeIndex'))].checked = true;
+	price = Number(sessionStorage.getItem('price'));
 	seniorNumber.value = Number(sessionStorage.getItem('senior'));
 	basicNumber.value = Number(sessionStorage.getItem('basic'));
-	// totalPrice.innerHTML = Number(sessionStorage.getItem('totalPrice'));
-	totalPrice.innerHTML = (Number(sessionStorage.getItem('price')) * Number(basicNumber.value)) + ((Number(sessionStorage.getItem('price')) / 2) * Number(seniorNumber.value));
-	// console.log(typeof totalPrice.textContent);
+	totalPrice.innerHTML = Number(sessionStorage.getItem('totalPrice'));
 };
 
 const ticketTypes = document.querySelectorAll('.radio-btn');
@@ -645,7 +573,6 @@ const plusSenior = document.querySelector('.senior-plus');
 const minusSenior = document.querySelector('.senior-minus');
 
 let price;
-let isTypeChecked;
 
 function selectPrice() {
 	price = this.getAttribute('price');
@@ -664,29 +591,22 @@ function countTotalPrice() {
 			totalPrice.innerHTML = (Number(price) * Number(basicNumber.value)) + (Number(price) / 2 * Number(seniorNumber.value));
 			sessionStorage.setItem('totalPrice', Number(totalPrice.textContent));
 			// console.log(typeof totalPrice.textContent);
-			sessionStorage.setItem('basic', basicNumber.value);
-			sessionStorage.setItem('senior', seniorNumber.value);
+			sessionStorage.setItem('basic', Number(basicNumber.value));
+			sessionStorage.setItem('senior', Number(seniorNumber.value));
 		}
 	});
 }
 
+ticketTypes.forEach(type => type.addEventListener('input', selectPrice));
 plusSenior.addEventListener('click', countTotalPrice);
 minusSenior.addEventListener('click', countTotalPrice);
 minusBasic.addEventListener('click', countTotalPrice);
 plusBasic.addEventListener('click', countTotalPrice);
 
-ticketTypes.forEach(type => type.addEventListener('input', selectPrice));
 
-// function countTotalPrice() {
-//     ticketTypes.forEach(type => type.checked ? isTypeChecked = true : 0);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SYNCRONIZE HOME PAGE FORM DATA AND BOOKING FORM!!!!!!!!!!!!!!!!!!!!!!!
 
-//     if (isTypeChecked) {
-//         totalPrice.innerHTML = (Number(price) * Number(basicNumber.value)) + (Number(price) / 2 * Number(seniorNumber.value));
-//         sessionStorage.setItem('totalPrice', totalPrice.textContent);
-//         sessionStorage.setItem('basic', basicNumber.value);
-//         sessionStorage.setItem('senior', seniorNumber.value);
-//     }
-// }
+
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!MAP MAP MAP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

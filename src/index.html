@@ -306,12 +306,12 @@
                         <div class="tickets-type_box">
                             <h4 class="ticket-box_title">Ticket Type</h4>
                             <div class="inputs-container">
-                                <input class="radio-btn" id="radio" type="radio" name="radio" price="20">
-                                <label class="radio-name" for="radio">Permanent exhibition</label>
-                                <input class="radio-btn" id="radio2" type="radio" name="radio" price="25">
-                                <label class="radio-name" for="radio2">Temporary exhibition</label>
-                                <input class="radio-btn" id="radio3" type="radio" name="radio" price="40">
-                                <label class="radio-name" for="radio3">Combined Admission</label>
+                                <input class="radio-btn" id="permanent" type="radio" name="radio" price="20">
+                                <label class="radio-name" for="permanent">Permanent exhibition</label>
+                                <input class="radio-btn" id="temporary" type="radio" name="radio" price="25">
+                                <label class="radio-name" for="temporary">Temporary exhibition</label>
+                                <input class="radio-btn" id="combined" type="radio" name="radio" price="40">
+                                <label class="radio-name" for="combined">Combined Admission</label>
                             </div>
                         </div>
                         <div class="amount-box">
@@ -319,21 +319,21 @@
                                 <h4 class="amount-box_title">Amount</h4>
                                 <p class="age-group">Basic 18+</p>
                                 <div class="number_custom">
-                                    <button class="number_minus basic-minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input class="number_actual basic-number" type="number" min="0" max="20" value="0">
-                                    <button class="number_plus basic-plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button class="number_minus basic-minus" id="minusTicket" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                    <input class="number_actual basic-number" id="basic18" type="number" min="0" max="20" value="0">
+                                    <button class="number_plus basic-plus" id="plusTicket" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                 </div>
                                 <p class="age-group">Senior 65+</p>
                                 <div class="number_custom">
-                                    <button class="number_minus senior-minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input class="number_actual senior-number" type="number" min="0" max="20" value="0">
-                                    <button class="number_plus senior-plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button class="number_minus senior-minus" id="minusTicket" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                    <input class="number_actual senior-number" id="senior65" type="number" min="0" max="20" value="0">
+                                    <button class="number_plus senior-plus" id="plusTicket" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                 </div>
                                 
                             </div>
 														<div class="amount-box_total-box">
                               <p class="amount-box_total">Total € :</p>
-                              <p class="amount-box_total amount-box_sum">0</p>
+                              <p class="amount-box_total amount-box_sum" id="totalSum" >0</p>
                             </div>
                             <button class="submit-btn" type="submit">Buy Now</button>
                         </div>
@@ -368,17 +368,17 @@
                                         <div class="choice">
                                             <label class="booking_type_choice-label" for="basic18">Basic 18+ (20 €)</label>
                                             <div class="booking_type_choice_numbers">
-                                                <button class="choice_numbers-operator" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                                <button class="choice_numbers-operator" id="minusTicket" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
                                                 <input class="choice_numbers-actual basic-number" id="basic18" type="number" min="0" max="20" value="1" readonly>
-                                                <button class="choice_numbers-operator" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                <button class="choice_numbers-operator" id="plusTicket" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                             </div>
                                         </div>
                                         <div class="choice">
                                             <label class="booking_type_choice-label" for="senior65">Senior 65+ (10 €)</label>
                                             <div class="booking_type_choice_numbers">
-                                                <button class="choice_numbers-operator" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                                <button class="choice_numbers-operator" id="minusTicket" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
                                                 <input class="choice_numbers-actual senior-number" id="senior65" type="number" min="0" max="20" value="1" readonly>
-                                                <button class="choice_numbers-operator" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                <button class="choice_numbers-operator" id="plusTicket" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                             </div>
                                         </div>
                                     </div>
@@ -407,14 +407,14 @@
                         <div class="booking_payment_total">
                             <div class="ticket">
                                 <div class="ticket__number">
-                                    <p class="count">2</p>
+                                    <p class="count" id="basic18">2</p>
                                     <p class="name">Basic (20 €)</p>
                                 </div>
                                 <p class="ticket__price">40 €</p>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__number">
-                                    <p class="count">2</p>
+                                    <p class="count" id="senior65">2</p>
                                     <p class="name">Senior (10 €)</p>
                                 </div>
                                 <p class="ticket__price">20 €</p>
@@ -422,7 +422,7 @@
                             <div class="total-underline"></div>
                             <div class="total">
                                 <p class="total__text">Total:</p>
-                                <p class="total__price">60 €</p>
+                                <p class="total__price" id="totalSum">60 €</p>
                             </div>
                         </div>
                         <div class="booking_payment_frontcard creditcard">
