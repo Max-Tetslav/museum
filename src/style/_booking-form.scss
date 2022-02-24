@@ -255,6 +255,9 @@
                 display: flex;
                 align-items: center;
                 .count {
+										padding: 0;
+    								border: 0;
+    								text-align: center;
                     background-color: #030303;
                     color: #A4A4A3;
                     border-radius: 3px;
