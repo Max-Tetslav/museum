@@ -91,6 +91,10 @@
             width: 700px;
             height: 465px;
             background-size: cover;
+
+            .slide {
+              height: auto;
+            }
         }
         .slider {
             position: absolute;
@@ -206,8 +210,9 @@
         flex-direction: column;
     }
     .explore_text-box {
-        display: flex;
-        flex-direction: column;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .explore_title {
         margin-top: 55px;
@@ -236,8 +241,12 @@
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!video !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
     // video //
     // video //
+
     .video {
         height: 1001px;
+        .video_container{
+          max-width: 984px;
+        }
         .video_text-box {
             margin-top: 55px;
             .video_info {
@@ -284,13 +293,30 @@
                 }
             }
         }
+
         .video-playlist {
-            height: 170px;
+            max-width: 984px;
+            height: 222px;
             margin-top: 40px;
         }
-        .video-playlist_item {
+
+        .swiper-slide {
             width: 300px;
             height: 170px;
+        }
+
+        .iframe-wrapper{
+          height: 170px;
+        }
+
+        .iframe-slide{
+          width: 300px;
+          height: 170px;
+        }
+
+        .swiper-navigation{
+          margin: 40px auto 0;
+          height: 12px;
         }
     }
     /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -428,6 +454,15 @@
        !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
        !!!!!!!!!!!!!!!!!!!!!TICKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+      .tickets-slider {
+        width: 700px;
+        height: 440px;
+        .tickets-slide{
+          object-fit: cover;
+        }
+      }
+
     .contacts {
         min-height: 734px;
     }
@@ -456,8 +491,9 @@
             margin-top: 35px;
         }
     }
-    .map {
-        max-width: 694px;
+    #map {
+      width: 694px;
+      height: 454px;
     }
     .overlay {
         width: 1024px;
