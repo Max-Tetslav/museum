@@ -280,7 +280,7 @@ function fullSize() {
 	}
 }
 
-sessionStorage.setItem('volume', `${VOLUME_BAR_EL.value}`);
+localStorage.setItem('volume', `${VOLUME_BAR_EL.value}`);
 
 function isMute() {
 	if (VOLUME_BAR_EL.value != 0) {
@@ -290,7 +290,7 @@ function isMute() {
 		updateVolume();
 	} else {
 		VIDEO_EL.muted = false;
-		VOLUME_BAR_EL.value = sessionStorage.getItem('volume');
+		VOLUME_BAR_EL.value = localStorage.getItem('volume');
 		VOLUME_IMG_EL.src = './assets/svg/video-volume.svg';
 		updateVolume();
 	}
@@ -385,17 +385,20 @@ new Swiper(".swiper", {
 	simulateTouch: false,
 	loop: true,
 	slideToClickedSlide: true,
+  spaceBetween: 20,
+  slidesPerView: 2,
 	breakpoints: {
-		769: {
+    420: {
+      simulateTouch: false,
+    },
+		768: {
 			slidesPerView: 3,
 			simulateTouch: false,
 		},
-		320: {
-			slidesPerView: 2,
-			simulateTouch: false,
-		}
+    1024: {
+      spaceBetween: 40
+    }
 	},
-	spaceBetween: 40,
 })
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!GALERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -555,58 +558,99 @@ firstForm.addEventListener('submit', mySubmitFunction);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!HOME PAGE FORM DATA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-window.onload = function () {
-	ticketTypes[Number(sessionStorage.getItem('typeIndex'))].checked = true;
-	price = Number(sessionStorage.getItem('price'));
-	seniorNumber.value = Number(sessionStorage.getItem('senior'));
-	basicNumber.value = Number(sessionStorage.getItem('basic'));
-	totalPrice.innerHTML = Number(sessionStorage.getItem('totalPrice'));
-};
-
 const ticketTypes = document.querySelectorAll('.radio-btn');
-const basicNumber = document.querySelector('.basic-number');
-const seniorNumber = document.querySelector('.senior-number');
+const RADIO_NAME_ELS = document.querySelectorAll('.radio-name');
+const basicNumber = document.querySelectorAll('.basic-number');
+const seniorNumber = document.querySelectorAll('.senior-number');
 const totalPrice = document.querySelector('.amount-box_sum');
-const minusBasic = document.querySelector('.basic-minus');
-const plusBasic = document.querySelector('.basic-plus');
-const plusSenior = document.querySelector('.senior-plus');
-const minusSenior = document.querySelector('.senior-minus');
+const minusBasic = document.querySelectorAll('.basic-minus');
+const plusBasic = document.querySelectorAll('.basic-plus');
+const plusSenior = document.querySelectorAll('.senior-plus');
+const minusSenior = document.querySelectorAll('.senior-minus');
+const SELECT_TICKET_TYPE_ELS = document.querySelectorAll('.select-type')
 
 let price;
 
 function selectPrice() {
 	price = this.getAttribute('price');
-	sessionStorage.setItem('price', price);
+	localStorage.setItem('price', price);
 	ticketTypes.forEach((type, index) => {
 		if (type.checked) {
-			sessionStorage.setItem('typeIndex', index);
+			localStorage.setItem('typeIndex', index);
+			localStorage.setItem('typeName', RADIO_NAME_ELS[index].textContent);
+			ORDER_TICKET_TYPE_EL.textContent = `${RADIO_NAME_ELS[index].textContent}`;
 		}
 	});
 	countTotalPrice();
+	sincronizeData();
 }
 
 function countTotalPrice() {
 	ticketTypes.forEach(type => {
 		if (type.checked) {
-			totalPrice.innerHTML = (Number(price) * Number(basicNumber.value)) + (Number(price) / 2 * Number(seniorNumber.value));
-			sessionStorage.setItem('totalPrice', Number(totalPrice.textContent));
+			totalPrice.innerHTML = (Number(price) * Number(basicNumber[0].value)) + (Number(price) / 2 * Number(seniorNumber.value));
+			localStorage.setItem('totalPrice', Number(totalPrice.textContent));
 			// console.log(typeof totalPrice.textContent);
-			sessionStorage.setItem('basic', Number(basicNumber.value));
-			sessionStorage.setItem('senior', Number(seniorNumber.value));
+			localStorage.setItem('basic', Number(basicNumber[0].value));
+			localStorage.setItem('senior', Number(seniorNumber.value));
 		}
 	});
 }
 
+function updateBasicNumberUp() {
+	basicNumber.forEach(item => item.stepUp());
+}
+
+function updateBasicNumberDown() {
+	basicNumber.forEach(item => item.stepDown());
+}
+
+function updateSeniorNumberUp() {
+	seniorNumber.forEach(item => item.stepUp());
+}
+
+function updateSeniorNumberDown() {
+	seniorNumber.forEach(item => item.stepDown());
+}
+
 ticketTypes.forEach(type => type.addEventListener('input', selectPrice));
-plusSenior.addEventListener('click', countTotalPrice);
-minusSenior.addEventListener('click', countTotalPrice);
-minusBasic.addEventListener('click', countTotalPrice);
-plusBasic.addEventListener('click', countTotalPrice);
+plusSenior.forEach(item => item.addEventListener('click', countTotalPrice));
+minusSenior.forEach(item => item.addEventListener('click', countTotalPrice));
+minusBasic.forEach(item => item.addEventListener('click', countTotalPrice));
+plusBasic.forEach(item => item.addEventListener('click', countTotalPrice));
+plusBasic.forEach(item => item.addEventListener('click', updateBasicNumberUp));
+minusBasic.forEach(item => item.addEventListener('click', updateBasicNumberDown));
+plusSenior.forEach(item => item.addEventListener('click', updateSeniorNumberUp));
+minusSenior.forEach(item => item.addEventListener('click', updateSeniorNumberDown));
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SYNCRONIZE HOME PAGE FORM DATA AND BOOKING FORM!!!!!!!!!!!!!!!!!!!!!!!
 
+const SENIOR_TICKETS_PRICE_EL = document.querySelectorAll('.senior-tickets-price');
+const BASIC_TICKETS_PRICE_EL = document.querySelectorAll('.basic-tickets-price');
+const ORDER_TICKET_TYPE_EL = document.querySelector('.order-ticket-type');
 
+function sincronizeData() {
+	SENIOR_TICKETS_PRICE_EL.forEach(item => item.innerHTML = `${price / 2}`);
+	BASIC_TICKETS_PRICE_EL.forEach(item => item.innerHTML = `${price}`);
+}
+
+window.onload = function () {
+	ticketTypes[Number(localStorage.getItem('typeIndex'))].checked = true;
+	price = Number(localStorage.getItem('price'));
+	seniorNumber.value = Number(localStorage.getItem('senior'));
+	basicNumber.forEach(item => item.value = Number(localStorage.getItem('basic')));
+	totalPrice.innerHTML = Number(localStorage.getItem('totalPrice'));
+	SENIOR_TICKETS_PRICE_EL.forEach(item => item.innerHTML = `${localStorage.getItem('price')
+		? localStorage.getItem('price') / 2
+		: price / 2}`);
+	BASIC_TICKETS_PRICE_EL.forEach(item => item.innerHTML = `${localStorage.getItem('price')
+		? localStorage.getItem('price')
+		: price}`);
+	ORDER_TICKET_TYPE_EL.textContent = `${localStorage.getItem('typeName')
+		? localStorage.getItem('typeName')
+		: RADIO_NAME_ELS[0].textContent}`;
+};
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!MAP MAP MAP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
