@@ -392,11 +392,11 @@ new Swiper(".swiper", {
       simulateTouch: false,
     },
 		768: {
-			slidesPerView: 3,
-			simulateTouch: false,
+      simulateTouch: false,
+      spaceBetween: 40,
 		},
     1024: {
-      spaceBetween: 40
+      slidesPerView: 3
     }
 	},
 })
