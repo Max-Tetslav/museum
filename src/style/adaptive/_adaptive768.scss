@@ -77,10 +77,13 @@
         .pictures {
             width: 100%;
             height: 375px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px 20px;
+
+            .small-pictures-container {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 20px;
+              gap: 20px 20px;
+            }
         }
         .menu768-underline {
             width: 100%;
@@ -222,7 +225,12 @@
     // video //
     // video //
     .video {
+        max-width: 768px;
         height: 837px;
+
+        .video_container {
+          max-width: 728px;
+        }
         .video_text-box {
             margin-top: 40px;
         }
@@ -264,7 +272,8 @@
             }
         }
         .video-playlist {
-            height: 199px;
+            height: 231px;
+            max-width: 100%;
             margin-top: 20px;
         }
         .video-playlist_item {
@@ -278,6 +287,25 @@
             width: 190px;
             margin: 20px auto 0;
         }
+
+      .swiper-slide {
+          width: 354px;
+          height: 199px;
+      }
+
+      .iframe-wrapper{
+        height: 199px;
+      }
+
+      .iframe-slide{
+        width: 354px;
+        height: 199px;
+      }
+
+      .swiper-navigation{
+        margin: 20px auto 0;
+        width: 190px;
+      }
     }
     /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -320,6 +348,12 @@
     .tickets {
         min-height: 633px;
     }
+
+    .tickets-slider {
+      width: 444px;
+      height: 340px;
+  }
+
     .tickets_title {
         margin-top: 40px;
         margin-bottom: 35px;
@@ -407,9 +441,9 @@
             margin-top: 40px;
         }
     }
-    .map {
+    #map {
         margin-top: 40px;
-        max-width: 728px;
+        width: 728px;
     }
     /* !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

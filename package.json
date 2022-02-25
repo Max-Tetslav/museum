@@ -4,7 +4,7 @@
     "main": "main.js",
     "scripts": {
         "build": "webpack",
-        "dev": "webpack serve --env develop"
+        "start": "webpack serve --env develop"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0",

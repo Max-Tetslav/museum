@@ -143,13 +143,13 @@
     color: $black;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     height: 443px;
     width: 175px;
     margin-top: 28px;
     .amoutn-box__choose-container {
-        height: 341px;
+        height: 300px;
         width: 150px;
     }
 }
@@ -163,7 +163,7 @@
     font-size: 28px;
     line-height: 32px;
     color: $black;
-    text-align: right;
+    text-align: center;
 }
 
 .age-group {
@@ -173,6 +173,7 @@
     font-weight: 300;
     font-size: 22px;
     line-height: 26px;
+		text-align: center;
 }
 
 .age-group:nth-of-type(2) {
@@ -216,15 +217,17 @@
 }
 
 .amount-box_total-box {
+		width: 100%;
     display: flex;
-    margin-top: 50px;
+		justify-content: space-between;
+    margin-bottom: 50px;
     .amount-box_total {
         margin-top: 0px;
         margin-bottom: 0px;
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 33px;
         letter-spacing: 1.65px;
         color: $black;

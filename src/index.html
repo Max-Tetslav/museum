@@ -71,8 +71,10 @@
                 <div class="pictures-media-container">
                     <div class="pictures">
                         <img class="lazyload pictures-item" data-src="./assets/img/menu768-img1.jpeg" alt="masterpeace" loading="lazy">
-                        <img class="lazyload pictures-item" data-src="./assets/img/menu768-img2.jpeg" alt="louvre" loading="lazy">
-                        <img class="lazyload pictures-item" data-src="./assets/img/menu768-img3.jpeg" alt="louvre" loading="lazy">
+                        <div class="small-pictures-container">
+                          <img class="lazyload pictures-item" data-src="./assets/img/menu768-img2.jpeg" alt="louvre" loading="lazy">
+                          <img class="lazyload pictures-item" data-src="./assets/img/menu768-img3.jpeg" alt="louvre" loading="lazy">
+                        </div>
                     </div>
                     <div class="menu768-underline"></div>
                     <nav class="icon-list">
@@ -144,43 +146,55 @@
                 <div class="underline-title visiting_underline-title"></div>
                 <div class="cards-box">
                     <a class="card" href="./tours/tour1.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/1_card.jpeg" alt="card-img" loading="lazy">
+												<div class="card__image__container">
+													<img class="lazyload card_image" data-src="./assets/img/1_card.jpeg" alt="card-img" loading="lazy">
+												</div>
                         <h3 class="card_title">Royal Palace</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour2.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/2_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Denon Wing</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/2_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Denon Wing</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour3.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/3_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Colonnade Perrault</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/3_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Colonnade Perrault</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour4.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/4_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Greek hall</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/4_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Greek hall</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour5.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/5_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Mona Lisa</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/5_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Mona Lisa</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
                     </a>
                     <a class="card" href="./tours/tour6.html" target="_blank">
-                        <img class="lazyload card_image" data-src="./assets/img/6_card.jpeg" alt="card-img" loading="lazy">
-                        <h3 class="card_title">Night Palace</h3>
+												<div class="card__image__container">
+                        	<img class="lazyload card_image" data-src="./assets/img/6_card.jpeg" alt="card-img" loading="lazy">
+												</div>
+												<h3 class="card_title">Night Palace</h3>
                         <div class="underline-title card_title-underline"></div>
                         <p class="card_text">360° Virtual Tour</p>
                         <p class="card_text-smaller">Google Street Panorama View</p>
@@ -208,18 +222,15 @@
                         <img class="compare-img " src="./assets/img/explore-after.jpeg" alt="masterpeace-after" width="720" height="700">
                     </div>
                 </div>
-
         </section>
         <section class="video section-light" id="video">
-
-				
             <div class="video_container">
                 <div class="video_text-box">
                     <h2 class="video_title title-light">Video journey</h2>
                     <p class="video_info">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
                 </div>
                 <div class="player">
-                    <video class="player__video viewer" src="./assets/video/video0.mp4"></video>
+                    <video class="player__video viewer" src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpeg"></video>
                     <div class="big-play__background">
                         <img class="lazyload player__button big-play" data-src="./assets/svg/video-play-big.svg" alt="play_big-btn" loading="lazy">
                     </div>
@@ -230,7 +241,7 @@
 														</button>
                         </div>
 
-                        <input class="progress range" type="range" name="progress" min="0" max="100" value="50" step="0.1">
+                        <input class="progress range" type="range" name="progress" min="0" max="100" value="0" step="0.1">
                         <button class="player__button mute-btn">
 															<img class="lazyload volume-img" data-src="./assets/svg/video-volume.svg" alt="mute" loading="lazy">
 												</button>
@@ -246,62 +257,29 @@
 								<div class="swiper video-playlist">
 									<div class="swiper-wrapper iframe-wrapper">
 										<div class="swiper-slide">
-											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/2OR0OCr6uRE?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
+											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/2OR0OCr6uRE?enablejsapi=1" width="100%" height="100%" allowfullscreen></iframe>
 										</div>
 										<div class="swiper-slide">
-											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/zp1BXPX8jcU?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
+											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/zp1BXPX8jcU?enablejsapi=1" width="100%" height="100%" allowfullscreen></iframe>
 										</div>
 										<div class="swiper-slide">
-											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/aWmJ5DgyWPI?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
+											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/aWmJ5DgyWPI?enablejsapi=1" width="100%" height="100%" allowfullscreen></iframe>
 										</div>
 										<div class="swiper-slide">
-											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/Vi5D6FKhRmo?controls=0" width="452" height="254" allowfullscreen></iframe>
+											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/Vi5D6FKhRmo?controls=0" width="100%" height="100%" allowfullscreen></iframe>
 										</div>
 										<div class="swiper-slide">
-											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/NOhDysLnTvY?controls=0" width="452" height="254" allowfullscreen></iframe>
+											<iframe class="lazyload iframe-slide" data-src="//www.youtube.com/embed/NOhDysLnTvY?controls=0" width="100%" height="100%" allowfullscreen></iframe>
 										</div>
 									</div>
 									
 									
 									<div class="swiper-navigation">
-										<button class="video-slider__arrow-left"></button>
+										<button class="video-slider__arrow video-slider__arrow-left"></button>
 										<div class="swiper-pagination swiper-bullets"></div>
-										<button class="video-slider__arrow-right"></button>
+										<button class="video-slider__arrow video-slider__arrow-right"></button>
 									</div>
 								</div>
-<!-- 
-
-                <div class="swiper video-playlist">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/2OR0OCr6uRE?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/zp1BXPX8jcU?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/aWmJ5DgyWPI?enablejsapi=1" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/Vi5D6FKhRmo?controls=0" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-                    <div class="swiper-slide">
-											<iframe class="lazyload video-playlist_item" data-src="//www.youtube.com/embed/NOhDysLnTvY?controls=0" width="452" height="254" allowfullscreen></iframe>
-                    </div>
-									</div>
-									
-									
-									<div class="swiper-navigation">
-										<button class="swiper-button-prev"></button>
-										<div class="swiper-pagination"></div>
-                    <!-- <div class="video-slider__point video-slider__point-selected"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div>
-											<div class="video-slider__point"></div> -->
-											<!-- <button class="swiper-button-next"></button>
-										</div>
-									</div> --> 
             </div>
         </section>
         <section class="gallery section-dark" id="gallery">
@@ -330,12 +308,12 @@
                         <div class="tickets-type_box">
                             <h4 class="ticket-box_title">Ticket Type</h4>
                             <div class="inputs-container">
-                                <input class="radio-btn" id="radio" type="radio" name="radio" price="20">
-                                <label class="radio-name" for="radio">Permanent exhibition</label>
-                                <input class="radio-btn" id="radio2" type="radio" name="radio" price="25">
-                                <label class="radio-name" for="radio2">Temporary exhibition</label>
-                                <input class="radio-btn" id="radio3" type="radio" name="radio" price="40">
-                                <label class="radio-name" for="radio3">Combined Admission</label>
+                                <input class="radio-btn" id="permanent" type="radio" name="radio" price="20">
+                                <label class="radio-name" for="permanent">Permanent exhibition</label>
+                                <input class="radio-btn" id="temporary" type="radio" name="radio" price="25">
+                                <label class="radio-name" for="temporary">Temporary exhibition</label>
+                                <input class="radio-btn" id="combined" type="radio" name="radio" price="40">
+                                <label class="radio-name" for="combined">Combined Admission</label>
                             </div>
                         </div>
                         <div class="amount-box">
@@ -343,20 +321,21 @@
                                 <h4 class="amount-box_title">Amount</h4>
                                 <p class="age-group">Basic 18+</p>
                                 <div class="number_custom">
-                                    <button class="number_minus basic-minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input class="number_actual basic-number" type="number" min="0" max="20" value="0">
-                                    <button class="number_plus basic-plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button class="number_minus basic-minus" id="minusTicket" type="button">-</button>
+                                    <input class="number_actual basic-number" type="number" min="0" max="20" value="0" readonly>
+                                    <button class="number_plus basic-plus" id="plusTicket" type="button">+</button>
                                 </div>
                                 <p class="age-group">Senior 65+</p>
                                 <div class="number_custom">
-                                    <button class="number_minus senior-minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input class="number_actual senior-number" type="number" min="0" max="20" value="0">
-                                    <button class="number_plus senior-plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button class="number_minus senior-minus" id="minusTicket" type="button" >-</button>
+                                    <input class="number_actual senior-number"  type="number" min="0" max="20" value="0" readonly>
+                                    <button class="number_plus senior-plus" id="plusTicket" type="button" >+</button>
                                 </div>
-                                <div class="amount-box_total-box">
-                                    <p class="amount-box_total">Total €</p>
-                                    <p class="amount-box_total amount-box_sum">0</p>
-                                </div>
+                                
+                            </div>
+														<div class="amount-box_total-box">
+                              <p class="amount-box_total">Total € :</p>
+                              <p class="amount-box_total amount-box_sum" id="totalSum" >0</p>
                             </div>
                             <button class="submit-btn" type="submit">Buy Now</button>
                         </div>
@@ -382,26 +361,31 @@
                             <input class="booking_type_inputs-item" type="text">
                             <input class="booking_type_inputs-item" type="email">
                             <input class="booking_type_inputs-item" type="tel">
-                            <input class="booking_type_inputs-item" type="text">
+                            <select class="booking_type_inputs-item">
+															<option value="default" selected disabled>Ticket type</option>
+															<option class="select-type" value="permanent">Permanent exhibition</option>
+															<option class="select-type" value="temporary">Temporary exhibition</option>
+															<option class="select-type" value="combined">Combined Admission</option>
+														</select>
                             <div class="booking_type_tickets">
                                 <div class="booking_type_tickets_container">
                                     <p class="booking_type_tickets-description">Entry ticket</p>
                                     <div class="booking_type_tickets-underline"></div>
                                     <div class="booking_type_choice">
                                         <div class="choice">
-                                            <label class="booking_type_choice-label" for="basic18">Basic 18+ (20 €)</label>
+                                            <label class="booking_type_choice-label" for="basic18">Basic 18+ (<span class="basic-tickets-price">20</span> €)</label>
                                             <div class="booking_type_choice_numbers">
-                                                <button class="choice_numbers-operator" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                                <input class="choice_numbers-actual basic-number" id="basic18" type="number" min="0" max="20" value="1" readonly>
-                                                <button class="choice_numbers-operator" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                <button class="choice_numbers-operator basic-minus" id="minusTicket" type="button" >-</button>
+                                                <input class="choice_numbers-actual basic-number" type="number" min="0" max="20" value="0" readonly>
+                                                <button class="choice_numbers-operator basic-plus" id="plusTicket" type="button" >+</button>
                                             </div>
                                         </div>
                                         <div class="choice">
-                                            <label class="booking_type_choice-label" for="senior65">Senior 65+ (10 €)</label>
+                                            <label class="booking_type_choice-label" for="senior65">Senior 65+ (<span class='senior-tickets-price'>10</span> €)</label>
                                             <div class="booking_type_choice_numbers">
-                                                <button class="choice_numbers-operator" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                                <input class="choice_numbers-actual senior-number" id="senior65" type="number" min="0" max="20" value="1" readonly>
-                                                <button class="choice_numbers-operator" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                <button class="choice_numbers-operator senior-minus" id="minusTicket" type="button" >-</button>
+                                                <input class="choice_numbers-actual senior-number"  type="number" min="0" max="20" value="0" readonly>
+                                                <button class="choice_numbers-operator senior-plus" id="plusTicket" type="button" >+</button>
                                             </div>
                                         </div>
                                     </div>
@@ -423,29 +407,29 @@
                             </div>
                             <div class="tictet-info">
                                 <img src="./assets/svg/form_choice-icon.svg" alt="choice-icon" loading="lazy">
-                                <p>Temporary exhibition</p>
+                                <p class="order-ticket-type">Permanent exhibition</p>
                             </div>
                             <img class="lazyload booking_payment_overview_img" data-src="./assets/img/form-overview_picture.jpeg" alt="louvre" loading="lazy">
                         </div>
                         <div class="booking_payment_total">
                             <div class="ticket">
                                 <div class="ticket__number">
-                                    <p class="count">2</p>
-                                    <p class="name">Basic (20 €)</p>
+                                    <input class="count basic-number" type="number" min="0" max="20" value="0" readonly>
+                                    <p class="name">Basic (<span class='basic-tickets-price'>20</span> €)</p>
                                 </div>
                                 <p class="ticket__price">40 €</p>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__number">
-                                    <p class="count">2</p>
-                                    <p class="name">Senior (10 €)</p>
+                                    <input class="count  senior-number" type="number" min="0" max="20" value="0" readonly>
+                                    <p class="name">Senior (<span class='senior-tickets-price'>10</span> €)</p>
                                 </div>
                                 <p class="ticket__price">20 €</p>
                             </div>
                             <div class="total-underline"></div>
                             <div class="total">
                                 <p class="total__text">Total:</p>
-                                <p class="total__price">60 €</p>
+                                <p class="total__price" id="totalSum">60 €</p>
                             </div>
                         </div>
                         <div class="booking_payment_frontcard creditcard">
@@ -587,9 +571,6 @@
     </div>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-
-
-
 </body>
 
 </html>
