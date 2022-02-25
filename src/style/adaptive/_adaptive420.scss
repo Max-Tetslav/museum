@@ -92,6 +92,10 @@
                 justify-content: space-between;
                 flex-wrap: nowrap;
                 gap: 13px 13px;
+                .small-pictures-container {
+                  margin-top: 0;
+                  gap: 20px 13px;
+                }
                 img {
                     height: 95px;
                     width: 95px;
@@ -196,11 +200,23 @@
             height: 368px;
             margin-bottom: 40px;
         }
+        .explore-slider {
+          width: 20px;
+        }
+        .compare-img {
+          width: auto;
+        }
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!video !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
         // video //
         // video //
         .video {
             height: 551px;
+            max-width: 420px;
+
+            .video_container {
+              max-width: 380px;
+            }
+
             .video_text-box {
                 margin-top: 40px;
             }
@@ -267,6 +283,41 @@
                     height: 8px;
                 }
             }
+            .swiper-slide {
+              width: 180px!important;
+              height: 101px;
+              margin-right: 0;
+              margin-left: 0;
+          }
+    
+          .iframe-wrapper{
+            height: 101px;
+          }
+    
+          .iframe-slide{
+            width: 180px;
+            height: 101px;
+          }
+    
+          .swiper-navigation{
+            margin: 40px auto 0;
+            width: 174px;
+            height: 8px;
+
+            .video-slider__arrow {
+              width: 7px;
+              height: 8px;
+            }
+
+            .swiper-bullets {
+              height: 8px;
+
+              .swiper-pagination-bullet{
+                height: 8px;
+                width: 8px;
+              }
+            }
+          }
         }
         /* !!!!!!!!!!!!!!!!!!!!!GALLERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -309,14 +360,15 @@
         .tickets {
             min-height: 759px;
         }
+
+
         .tickets_order-box {
             margin-top: 28px;
             flex-direction: column;
         }
-        .tickets_image {
-            min-width: 380px;
-            max-height: 160px;
-            object-fit: cover;
+        .tickets-slider {
+          width: 380px;
+          height: 160px;
         }
         .tickets_select-form {
             display: flex;
@@ -389,6 +441,10 @@
         .contacts_info-box_text {
             font-size: 16px;
             line-height: 19px;
+        }
+        #map{
+          max-width: 380px;
+          max-height: 248px;
         }
         /* !!!!!!!!!!!!!!!!!!!!!FORM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
